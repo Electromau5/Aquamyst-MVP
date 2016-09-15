@@ -1,0 +1,39 @@
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                      <h4 class="modal-title"style="text-align:center">Welcome to Aquamyst</h4>
+                          <h5 class ="modal-description"style="text-align:center">Explore and discover amazing custom made products from the most innovative online stores in India</p>
+                </div>
+                        <div class="explore">
+                            <%= link_to 'Explore Now', listings_path, class: "btn btn-primary btn-lg" %>
+                        </div>
+                  </div>
+                  </div>
+                  </div>
+
+<div class = "container-fluid"style="opacity:0.2">
+    <div class = "row" id="grid">
+          <% @listings.each do |listing| %>
+          <div class = "col-xs-6 col-md-3" id="listing-box">
+            <div class = "thumbnail"style="padding:6px">
+                <%= link_to image_tag(listing.image.url(:medium)), listing %>
+                </div>
+                  <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+                    <div class = "listing_name">
+                  <%= truncate(listing.name, length: 100) %>
+              </div>
+              <div class="seller-listing">
+                by<br />
+                  <small><%= link_to listing.seller.name,listing.seller if listing.seller%></smaill>
+              </div>
+            </div>
+        </div>
+      <% end %>
+  </div>
+  </div>
+  <div class="center">
+   <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+</div>
+
+ 

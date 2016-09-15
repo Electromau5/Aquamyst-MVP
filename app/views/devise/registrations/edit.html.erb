@@ -1,0 +1,44 @@
+<div class="container">
+<h1>Edit your Seller Account</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, 'Business description' %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :social1, 'Facebook link' %>
+    <%= f.text_field :social1, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :social2, 'Twiiter link' %>
+    <%= f.text_field :social2, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :social3, 'Instagram link' %>
+    <%= f.text_field :social3, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :social4, 'Pinterest link' %>
+    <%= f.text_field :social4, class: 'form-control' %><br />
+  </div>
+<%= f.submit "Edit Account", class: 'btn btn-primary' %><br /><br />
+  <%= link_to 'Cancel', root_path %><br /><br />
+<% end %>
+</div>
+<%= render 'layouts/footer' %>

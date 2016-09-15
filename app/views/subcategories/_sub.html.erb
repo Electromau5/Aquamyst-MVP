@@ -1,0 +1,21 @@
+<nav class="navbar nav">
+  <div class="container-fluid">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+        <div class = "row">
+          <div class = "col-xs-6 col-md-12">
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <% obj.each do |sub| %>
+                <div class = "sub-headers">
+                  <li><%= link_to sub.name, sub, class: "btn btn-primary" %></li><br />
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+  </div>
+</nav>
+

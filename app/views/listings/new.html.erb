@@ -1,0 +1,73 @@
+<div class = "container-fluid">
+	<h1 style="text-align:center">Add a new product</h1>
+		<%= render 'shared/errors', obj: @listing %>
+			<div class = "row">
+				<div class = "col-md-6 col-md-offset-3">
+					<%= form_for @listing do |l| %>
+						<%= l.label :name %><br />
+						<%= l.text_field :name, class: "form-control" %><br />
+
+						<%= l.label :category %><br />
+  						<%= l.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %><br /><br />
+
+						<%= l.label :subcategory, 'Subcategory' %><br />
+  						<%= l.select :subcategory_id, options_for_select(Subcategory.all.map{|s|[s.name, s.id]}) %><br /><br />
+
+  						<%= l.label :gender, 'Target Consumer (only for Apparel and Accessories)' %><br />
+						<%= l.radio_button :gender, 'men' %> 
+  						<%= label :gender_men, 'Men' %><br />
+  						<%= l.radio_button :gender, 'women' %>
+  						<%= label :gender_women, 'Women' %><br />
+						<%= l.radio_button :gender, 'both' %>
+  						<%= label :gender_both, 'Both' %><br />
+  						<%= l.radio_button :gender, 'none' %>
+  						<%= label :gender_none, 'Not Applicable' %><br /><br />
+
+  						
+
+						<%= l.label :feature1 %>
+						<%= l.text_field :feature1, class: "form-control" %>
+						<%= l.label :feature2 %>
+						<%= l.text_field :feature2, class: "form-control" %>
+						<%= l.label :feature3 %>
+						<%= l.text_field :feature3, class: "form-control" %>
+						<%= l.label :feature4 %>
+						<%= l.text_field :feature4, class: "form-control" %>
+						<%= l.label :feature5 %>
+						<%= l.text_field :feature5, class: "form-control" %>
+
+						<%= l.label :price %>
+						<%= l.text_field :price, class: "form-control" %>
+						<%= l.label :cod, 'Cash on Delivery' %>
+						<%= l.radio_button :cod, 'available' %> 
+  						<%= label :cod_available, 'Available' %>
+  						<%= l.radio_button :cod, 'not available' %> 
+  						<%= label :cod_not_available, 'Not Available' %>
+  						<%= l.radio_button :cod, ': Contact Seller' %> 
+  						<%= label :cod_contact, ': Contact Seller' %><br /><br />
+  						
+
+						<%= l.label :time, 'Delivery Time' %><br />
+						<%= l.text_field :time, class: "form-control" %>
+
+						<%= l.label :image %>
+						<%= l.file_field :image, class: "form-control"%><br />
+						<%= l.label :image2 %>
+						<%= l.file_field :image2, class: "form-control"%><br />
+						<%= l.label :image3 %>
+						<%= l.file_field :image3, class: "form-control"%><br />
+						<%= l.label :image4 %>
+						<%= l.file_field :image4, class: "form-control"%><br />
+						
+						<%= l.label :site %>
+						<%= l.text_field :site, class: "form-control" %>
+
+						<%= l.label :description, 'Detailed Description' %>
+						<%= l.text_area :description, class: "form-control" %><br/>
+
+						<%= l.submit 'List my product', class: "btn btn-primary"%>
+						<%= link_to 'Cancel', root_path %>
+					<% end %>
+				</div>
+			</div>
+</div>

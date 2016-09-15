@@ -1,0 +1,190 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* 
+{
+    margin: 0;
+}
+
+html, body 
+{
+    height: 100%;
+}
+
+/* About Us */
+.about
+{
+    font-family: "Raleway-Light", Arial;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+ 
+.company-details > .col-md-3 > h4
+{
+	color: #fff;
+	font-family: "Raleway-Bold", sans-serif;
+	font-size: 17px;
+}
+.company-details > .col-md-3 > p
+{
+	color: #fff;
+	font-family: "Raleway-ExtraLight", sans-serif;
+	font-size: 13px;
+}
+.company-details > .col-md-3 > p > a
+{
+	color: #fff;
+	font-family: "Raleway-ExtraLight", sans-serif;
+	font-size: 13px;
+}
+.dropdown {
+    float: right;
+    margin-right: 15px;
+}
+
+.footer {
+   height:155px;
+   width:100%;
+
+}
+.glyphicon-search
+{
+	margin-top: -1px;
+}
+.icon-bar {
+    background-color: black;
+  }
+
+.icons >  a > img
+{
+    float: right;
+    height: 50px;
+    margin-top: -22px;
+}
+.landing-logo
+{
+    margin-left: 45%;
+    margin-top: 20%;
+    position: fixed;
+    z-index: 1;
+}
+ .navbar-brand
+  {
+  	margin-top: -3px;
+  }
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+.navbar-default .navbar-nav li > a 
+{
+	color: #fff;
+	font-family: "Raleway-ExtraLight", sans-serif;
+	font-weight: thin;
+	font-size: 15px;
+}
+
+.navbar-default .navbar-nav li > a:hover
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar-toggle
+{
+	border-color: black;
+}
+
+
+#search-form
+{
+	float:left;
+	margin-top: 8px;
+	margin-left: -1px;
+}
+
+.push
+{
+	height: 155px;
+}
+
+.wrapper 
+{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+// Landing Page Modal
+
+
+.modal-content
+{
+    height: 400px;
+}
+
+.explore
+{
+    text-align: center;
+    margin-top: 10%;
+}
+.modal-header
+{
+    margin-top: 15%;
+}
+
+.modal-login //user login
+{
+    float: right;
+    font-family: "Raleway-Bold", sans-serif;
+    color: #000;
+}
+
+.modal-title
+{
+    font-family: "Raleway-Bold", sans-serif;
+    font-size: 30px;
+}
+.modal-description
+{
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 16px;
+}
+
+.modal-dialog
+{
+    margin-top: 11%;
+}
+
+.pagination > li > a
+{
+    color: #000 !important;
+}
+

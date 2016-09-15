@@ -1,0 +1,64 @@
+<nav class="navbar nav">
+<div class="container-fluid">
+	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+     </button>
+      <div class = "row">
+      <div class = "col-xs-6 col-md-12">
+   
+<div class="collapse navbar-collapse" id="myNavbar">
+	<% if @subcategory.apparel %>
+    <% Subcategory.all.where(:apparel => true).each do |sub| %>
+    <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" if sub.apparel %></li><br />
+    </div>
+    <% end %>
+    <% elsif @subcategory.accessory %>
+    <% Subcategory.all.where(:accessory => true).each do |sub| %>
+    <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" %></li><br />
+    </div>
+    <% end %>
+     <% elsif @subcategory.mobile %>
+    <% Subcategory.all.where(:mobile => true).each   do |sub| %>
+    <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" %></li><br />
+    </div>
+    <% end %>
+   <% elsif @subcategory.laptop %>
+    <% Subcategory.all.where(:laptop => true).each do |sub| %>
+    <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" if sub.laptop %></li><br />
+    </div>
+    <% end %>
+   <% elsif @subcategory.home %>
+    <% Subcategory.all.where(:home => true).each do |sub| %>
+      <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" if sub.home %></li><br />
+    </div>
+    <% end %>
+  <% else %> 
+    <%if @subcategory.other %>
+      <% Subcategory.all.where(:other => true).each do |sub| %>
+        <div class="sub-headers">
+      <li><%= link_to sub.name, sub, class: "btn btn-primary" if sub.other %></li><br />
+    </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+</div>
+</div>
+
+    	<div class="col-md-12 text-center" id="consumer-type">
+			<%= link_to @subcategory.gender1, men_path, class: "btn btn-default" if @subcategory.gender1 %>
+			<%= link_to @subcategory.gender2, women_path, class: "btn btn-default" if @subcategory.gender2 %>
+			<%= link_to @subcategory.gender3, both_path, class: "btn btn-default" if @subcategory.gender3 %>
+		</div>
+        </div>
+  </nav>
+<%= render 'listings/listing', obj: @subcategory_women %>
+
+
