@@ -11,8 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
-gem 'turbolinks', '~> 2.5', '>= 2.5.3'
-gem 'jquery-turbolinks', '~> 2.1'
+# gem 'turbolinks', '~> 2.5', '>= 2.5.3'
+# gem 'jquery-turbolinks', '~> 2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.3'
 gem 'masonry-rails', '~> 0.2.4'
