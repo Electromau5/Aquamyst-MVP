@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'pages/about'
+  get 'pages/contact'
+  get 'pages/careers'
+  get 'pages/services'
+  get 'pages/terms'
+  get 'pages/newsletter'
+
   devise_for :sellers, :path => '', :path_names => { :sign_up => 'thenorthremembers' }, 
                                      controllers: {registrations: 'registrations'}
 
@@ -17,6 +24,10 @@ Rails.application.routes.draw do
   get 'men' => 'subcategories#men', path: 'subcategories/:id/men'
   get 'women' => 'subcategories#women', path: 'subcategories/:id/women'
   get 'both' => 'subcategories#both', path: 'subcategories/:id/both'
+
+  resources :applicants, only: [:new, :create]
+  get 'rainsofcastamere', to: 'applicants#index'
+  get 'thankyou', to: 'pages#thankyou'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

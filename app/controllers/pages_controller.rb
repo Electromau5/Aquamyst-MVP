@@ -8,4 +8,24 @@ class PagesController < ApplicationController
 
 	end
 
+	def careers
+
+	end
+
+	def contact
+
+	end
+
+	def newsletter
+
+	end
+
+	def terms
+
+	end
+
+	def services
+
+	end
+
 end

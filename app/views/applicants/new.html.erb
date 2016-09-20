@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 style="text-align:center">Input your details</h1>
+  <%= render 'shared/errors', obj: @applicant %>
+    <%= form_for(@applicant, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name, 'Business Name' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+  
+   <div class="form-group">
+    <%= f.label :description, 'Description of business' %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control' %>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :site %>
+    <%= f.text_field :site, class: 'form-control' %>
+  </div><br /><br />
+
+  <div class="applicant-submit"><%= f.submit "Request a Seller Account", class: 'btn btn-primary' %></div>
+<% end %>
+</div>
