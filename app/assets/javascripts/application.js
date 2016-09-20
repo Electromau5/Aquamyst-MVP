@@ -17,4 +17,5 @@
 //= require masonry/modernizr-transitions
 //= require jquery.elevatezoom
 //= require bootstrap-sprockets
+//= require modernizr
 //= require_tree .

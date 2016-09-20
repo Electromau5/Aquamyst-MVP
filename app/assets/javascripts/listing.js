@@ -8,7 +8,7 @@ $(document).ready(function() {
         $('#grid').masonry({
            itemSelector: '#listing-box',
           isFitWidth: true,
-          isAnimated: !Modernizr.csstransitions
+          
         });
     });
   });

@@ -1,49 +1,64 @@
-.icons
+.caption
 {
-	float: right;
-	margin-top: -5px;
+	background-color: #000;
+	color: #fff;
+	padding: 6px !important;
 }
-.seller-header
-{
-	font-weight: bold;
-	font-family: "Raleway-ExtraLight", sans-serif;
+.checkbox-inline + .checkbox-inline {
+    margin-top: 1px;
+    margin-left: 0px;
+    display: inherit;
 }
-
-.seller-name
+.cod
 {
-	color:#000;
-	font-family: "Raleway-Regular", sans-serif;
-}
-
-.seller-description
-{
-	
-}
-.seller-description > p
-{
-	font-size: 17px;
-}
-
-.seller-listing
-{
+	border: 1px solid #5bc0de;
+	width: 55%;
+	height: 40px;
+	background-color: #5bc0de;
+	color: #fff;
+	line-height: 25px;
+	padding: 6px 12px;
 	text-align: center;
-	margin-top: -12px;
-	font-size: 12px;
 }
-
-small > a
+#grid
 {
-	font-size: 15px;
+	width: 100%;
+	margin: 0 auto;
 }
 
+#listing-box
+{	
+	 border-radius: 0px;
+	 width: 300px;
+	 padding-top: 33.7px!important;
+}
 
-.seller-location
+.listing_name
 {
-	color:#000;
-	font-family: "Raleway-Bold", sans-serif;
+	font-family: 'Raleway-Medium', sans-serif;
+	font-size: 17px;
+	text-align: center;
+	padding: 15px;
+	border-radius: 5px;
 }
 
-.seller-location > p
+.listing-title
 {
-	font-size: 20px;
+	font-family:'Raleway-Light', sans-serif;
+	font-size:5px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 5%;
 }
+.time
+{
+	border: 1px solid #5bc0de;
+	width: 55%;
+	height: 40px;
+	background-color: #5bc0de;
+	color: #fff;
+	line-height: 25px;
+	padding: 6px 12px;
+	text-align: center;
+}
+
