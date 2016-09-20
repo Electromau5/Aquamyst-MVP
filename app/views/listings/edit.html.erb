@@ -21,8 +21,6 @@
   						<%= label :gender_women, 'Women' %><br />
 						<%= l.radio_button :gender, 'both' %>
   						<%= label :gender_both, 'Both' %><br />
-  						<%= l.radio_button :gender, 'none' %>
-  						<%= label :gender_none, 'Not Applicable' %><br /><br />
   						
   						<%= l.label :tag, 'Themes' %><br />
 						<%= l.radio_button :tag, 'contemporary designs' %> 
@@ -59,8 +57,8 @@
   						<%= label :cod_available, 'Available' %>
   						<%= l.radio_button :cod, 'not available' %> 
   						<%= label :cod_not_available, 'Not Available' %>
-  						<%= l.radio_button :cod, ': contact seller' %> 
-  						<%= label :cod_contact, ': Contact Seller' %><br /><br />
+  						<%= l.radio_button :cod, 'contact seller' %> 
+  						<%= label :cod_contact, 'Contact Seller' %><br /><br />
 
 						<%= l.label :time, 'Delivery Time' %><br />
 						<%= l.text_field :time, class: "form-control" %><br />

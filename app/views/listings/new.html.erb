@@ -20,11 +20,23 @@
   						<%= label :gender_women, 'Women' %><br />
 						<%= l.radio_button :gender, 'both' %>
   						<%= label :gender_both, 'Both' %><br />
-  						<%= l.radio_button :gender, 'none' %>
-  						<%= label :gender_none, 'Not Applicable' %><br /><br />
-
   						
-
+  						<%= l.label :tag, 'Themes' %><br />
+						<%= l.radio_button :tag, 'contemporary designs' %> 
+  						<%= label :tag_cartoons, 'Contemporary Designs' %><br />
+  						<%= l.radio_button :tag, 'ethnic designs' %> 
+  						<%= label :tag_ethnic, 'Ethnic Designs' %><br /> 
+  						<%= l.radio_button :tag, 'quotes' %>
+  						<%= label :tag_travel, 'Quotes' %><br/>
+						<%= l.radio_button :tag, 'spiritual designs' %> 
+  						<%= label :tag_spiritual, 'Spiritual Designs' %><br />
+						<%= l.radio_button :tag, 'superheroes' %> 
+  						<%= label :tag_superhero, 'Superheroes' %><br /> 						
+						<%= l.radio_button :tag, 'tv shows / movies' %> 
+  						<%= label :tag_funky, 'TV Shows / Movies' %><br />
+  						<%= l.radio_button :tag, 'none' %>
+  						<%= label :tag_none, 'None' %><br/><br /> 				
+  						
 						<%= l.label :feature1 %>
 						<%= l.text_field :feature1, class: "form-control" %>
 						<%= l.label :feature2 %>
@@ -43,8 +55,8 @@
   						<%= label :cod_available, 'Available' %>
   						<%= l.radio_button :cod, 'not available' %> 
   						<%= label :cod_not_available, 'Not Available' %>
-  						<%= l.radio_button :cod, ': Contact Seller' %> 
-  						<%= label :cod_contact, ': Contact Seller' %><br /><br />
+  						<%= l.radio_button :cod, 'contact Seller' %> 
+  						<%= label :cod_contact, 'Contact Seller' %><br /><br />
   						
 
 						<%= l.label :time, 'Delivery Time' %><br />
