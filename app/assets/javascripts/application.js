@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/modernizr-transitions
 //= require jquery.elevatezoom
 //= require bootstrap-sprockets
 //= require modernizr
-//= require turbolinks
 //= require_tree .
