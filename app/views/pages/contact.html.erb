@@ -1,7 +1,25 @@
 <div class='container'>
-	<div class="jumbotron"style="border:1px solid #000;background-color:#fff">
-		<h1 style="font-size: 40px">Contact Details</h1>
-			<p class="about" style="font-size: 19px">Phone: +91-9962050189</p>
-			<p class="about" style="font-size: 19px">Email: aquamystapp@gmail.com</p>
-	</div>
-</div>
+	<div class="jumbotron"style="border:1px solid #000;background-color:#fff;height: 450px">
+  		<button type="button" class="btn btn-success btn-lg" data-toggle="collapse" data-target="#demo">Email</button>
+  			<div id="demo" class="collapse"><br />
+    			<div class="jumbotron">
+   					<p>aquamystapp@gmail.com</p>
+     			</div>
+  			</div><br /><br />
+  		<button type="button" class="btn btn-success btn-lg" data-toggle="collapse" data-target="#demo1">Phone</button>
+  			<div id="demo1" class="collapse"><br />
+  				<div class="jumbotron">
+    				<p>+91-9962050189</p>
+     			</div>
+  			</div><br /><br />
+    	<button type="button" class="btn btn-success btn-lg" data-toggle="collapse" data-target="#demo2">Social</button>
+  			<div id="demo2" class="collapse"><br />
+    			<div class="jumbotron" style="background-color:#fff">
+   					<p style="float:left"><%= link_to image_tag('facebook.png'), '#' %></p>
+					<p style="float:left"><%= link_to image_tag('twitter.png'), 'https://twitter.com/ShopAquamyst' %></p>
+					<p style="float:left"><%= link_to image_tag('instagram.png'), '#' %></p>
+					<p style="float:left"><%= link_to image_tag('pinterest.png'), 'https://www.pinterest.com/aquamystapp/' %></p>
+     			</div>
+  			</div><br /><br />
+  	</div>
+  </div>
