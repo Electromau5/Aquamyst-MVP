@@ -42,8 +42,13 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :subcategory
   belongs_to :seller
-  
-  def self.search(search)
-       where("name ILIKE ?", "%#{search}%") 
-  end
- end
+
+def self.search(search)
+  if search
+    search_length = search.split.length
+    where([(['name LIKE ?'] * search_length).join(' AND ')] + search.split.map { |name| "%#{name}%" })
+  else
+    find(:all)
+  end 
+end
+end
