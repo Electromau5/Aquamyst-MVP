@@ -4,12 +4,14 @@ $(window).load(function(){
 
 
 $(document).ready(function() {
-        $('#grid').masonry({
+  $("#grid").imagesLoaded(function() {
+    $('#grid').masonry({
            itemSelector: '#listing-box',
-          isFitWidth: true,
-          isAnimated: !Modernizr.csstransitions
-        });
-  });
+           isFitWidth: true,
+           isAnimated: !Modernizr.csstransitions
+                      });
+                            });
+                  });
 
 
 $(function() {
@@ -26,3 +28,4 @@ $(function() {
 });
 
 Turbolinks.cacheCurrentPage();
+
