@@ -13,30 +13,28 @@
 							<div class = "col-md-10 col-xs-6">
 								<div id="gallery">
 								
-								 <%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image2.url(:large) }, :class => 'zoom2' %>
+								 <%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image.url(:large) }, :class => 'zoom2' %>
 								
 								 <% if @listing.image2.present? %>
 								 <%= link_to image_tag(@listing.image2.url(:thumb)), '#', data: { image: @listing.image2.url(:medium), zoom_image: @listing.image2.url(:large) }, :class => 'zoom2' %>
 								 <% else %>
 								 <%= image_tag('white.png', size: "10x10") %>
 								 <% end %>
-								 
-								 <% if @listing.image3.present? %>
+
+								<% if @listing.image3.present? %>
 								 <%= link_to image_tag(@listing.image3.url(:thumb)), '#', data: { image: @listing.image3.url(:medium), zoom_image: @listing.image3.url(:large) }, :class => 'zoom2' %>
 								 <% else %>
 								 <%= image_tag('white.png', size: "16x10") %>
 								 <% end %>
 
-								  <% if @listing.image4.present? %>
-								 <%= link_to image_tag(@listing.image4.url(:thumb)), '#', data: { image: @listing.image4.url(:medium), zoom_image: @listing.image3.url(:large) }, :class => 'zoom2' %>
+								 <% if @listing.image4.present? %>
+								 <%= link_to image_tag(@listing.image4.url(:thumb)), '#', data: { image: @listing.image4.url(:medium), zoom_image: @listing.image4.url(:large) }, :class => 'zoom2' %>
 								 <% else %>
 								 <%= image_tag('white.png', size: "16x10") %>
 								 <% end %>
-								
+								</div>
 							</div>
-								
-						</div>
-				</div>		
+						</div>		
 				</div>		
 					<div class = "col-md-6">
 						<div class = "listing_set_1">
