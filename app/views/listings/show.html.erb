@@ -60,8 +60,8 @@
 											₹ <%= @listing.price %>
 										</span><br /><br />
 										<div class= "cod">COD <%= @listing.cod %></div><br />
-										<div class="time">Delivery Time: <%= @listing.time %></div><br />
-									This item can be bought <%= link_to 'here', "#{@listing.site}" %><br /><br />
+										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
+									<%= link_to 'Buy It Here', "#{@listing.site}", class: "btn btn-primary" %><br /><br />
 					   </div>	
 					   			   	
 						<div class= "col-md-12 col-xs-12">
