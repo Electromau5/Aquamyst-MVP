@@ -10,7 +10,7 @@
 					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %><br /><br /><br />
 						<div class ="row">
 
-							<div class = "col-md-10 col-xs-6">
+							<div class = "col-md-12 col-xs-12">
 								<div id="gallery">
 								
 								 <%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image.url(:large) }, :class => 'zoom2' %>
