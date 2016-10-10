@@ -4,7 +4,7 @@
 			<div class = "row">
 				<div class = "col-md-6 col-md-offset-3">
 					<%= form_for @listing do |l| %>
-						<%= l.label :name %><br />
+						<%= l.label :name, 'Name (Maximum 75 Characters)' %><br />
 						<%= l.text_field :name, class: "form-control" %><br />
 						
 						<%= l.label :category %><br />
@@ -38,16 +38,16 @@
   						<%= l.radio_button :tag, 'none' %>
   						<%= label :tag_none, 'None' %><br/><br /> 						
 						
-						<%= l.label :feature1 %><br />
+						<%= l.label :feature1, 'Feature1 (Maximum 150 characters)' %>
 						<%= l.text_field :feature1, class: "form-control" %>
-						<%= l.label :feature2 %><br />
+						<%= l.label :feature2, 'Feature2 (Maximum 150 characters)'%>
 						<%= l.text_field :feature2, class: "form-control" %>
-						<%= l.label :feature3 %><br />
+						<%= l.label :feature3, 'Feature3 (Maximum 150 characters)' %>
 						<%= l.text_field :feature3, class: "form-control" %>
-						<%= l.label :feature4 %><br />
+						<%= l.label :feature4, 'Feature4 (Maximum 150 characters)' %>
 						<%= l.text_field :feature4, class: "form-control" %>
-						<%= l.label :feature5 %><br />
-						<%= l.text_field :feature5, class: "form-control" %><br />
+						<%= l.label :feature5, 'Feature5 (Maximum 150 characters)' %>
+						<%= l.text_field :feature5, class: "form-control" %>
 						
 						<%= l.label :price %><br />
 						<%= l.text_field :price, class: "form-control" %><br />
@@ -78,7 +78,7 @@
 						<%= l.label :site %><br />
 						<%= l.text_field :site, class: "form-control" %><br />
 						
-						<%= l.label :description, 'Detailed Description' %><br />
+						<%= l.label :description, 'Detailed Description (Maximum 500 characters)' %>
 						<%= l.text_area :description, class: "form-control" %><br /><br />
 						
 						<%= l.submit 'Update', class: 'btn btn-primary btn-lg'  %>
