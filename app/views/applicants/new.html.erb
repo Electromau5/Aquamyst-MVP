@@ -3,6 +3,8 @@
   <%= render 'shared/errors', obj: @applicant %>
     <%= form_for(@applicant, :html => {class: "form-horizontal", role: "form"}) do |f| %>
 
+<div class = "row">
+  <div class = "col-md-12">
   <div class="form-group">
     <%= f.label :name, 'Business Name' %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -32,6 +34,8 @@
     <%= f.label :site %>
     <%= f.text_field :site, class: 'form-control' %>
   </div><br /><br />
+</div>
+</div>
 
   <div class="applicant-submit"><%= f.submit "Request a Seller Account", class: 'btn btn-primary' %></div>
 <% end %>
