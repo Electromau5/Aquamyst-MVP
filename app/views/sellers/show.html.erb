@@ -16,9 +16,9 @@
 			<div class="icons">
 				<%= link_to image_tag('pinterest.png'), @seller.social4 if @seller.social4? %>
 				<%= link_to image_tag('instagram.png'), @seller.social3 if @seller.social3? %>
-				<%= link_to image_tag('twitter.png'), @seller.social2 if @seller.social2? %>
-				<%= link_to image_tag('facebook.png'), @seller.social1 if @seller.social1? %>
-			</div>
+				<%= link_to image_tag('twitter.png'), @seller.social2, :target => "_blank"  if @seller.social2? %>
+				<%= link_to image_tag('facebook.png'), @seller.social1, :target => "_blank" if @seller.social1%>
+				</div>
 	</div>
 </div>
 	<% if current_seller == @seller && @seller_listings.count < 10 %>
