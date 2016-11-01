@@ -35,7 +35,7 @@
 
 .listing_name
 {
-	font-family: 'Raleway-Medium', sans-serif;
+	font-family: 'Raleway-Bold', sans-serif;
 	font-size: 17px;
 	text-align: center;
 	padding: 15px;
@@ -55,6 +55,18 @@
 {
 	text-align:center;
 	font-family: 'Vonique64', sans-serif;
+}
+
+small > a
+{
+	font-family: 'Raleway-Bold', sans-serif;
+	color: #007bff;
+	
+}
+
+a:hover
+{
+	text-decoration: none;
 }
 .time
 {
