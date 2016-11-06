@@ -26,7 +26,7 @@
     </div>
     <% end %>
      <% elsif @subcategory.mobile %>
-    <% Subcategory.all.where(:mobile => true).each   do |sub| %>
+    <% Subcategory.all.where(:mobile => true).each do |sub| %>
     <div class="sub-headers">
       <li><%= link_to sub.name, sub, class: "btn btn-default" %></li><br />
     </div>
