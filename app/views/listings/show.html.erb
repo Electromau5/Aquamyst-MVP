@@ -1,6 +1,6 @@
 <div class = "container">
 
-	<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:1px solid #000">
+	<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
 <%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
 				
 		<div class = "row">
@@ -38,7 +38,7 @@
 				</div>		
 					<div class = "col-md-6">
 						<div class = "listing_set_1">
-							<div class="title" style="font-weight:bold;font-size:20px">
+							<div class="title">
 								Product Name: <br/>
 							</div>
 								<div class="fill">
@@ -47,15 +47,15 @@
 									<div class="by"style="font-weight:bold">by</div>
 										
 						</div>
-						<%= link_to @listing.seller.name, @listing.seller %><br /><br />
-								<div class="title" style="font-weight:bold;font-size:20px">
+						<div class="seller-name-on-product"><%= link_to @listing.seller.name, @listing.seller %></div><br />
+								<div class="title">
 									Key Features: <br/>
 								</div>
-									<%= @listing.feature1 %><br />
-									<%= @listing.feature2 %><br />
-									<%= @listing.feature3 %><br />
-									<%= @listing.feature4 %><br />
-									<%= @listing.feature5 %><br /><br />
+									<div class="f"><%= @listing.feature1 %></div>
+									<div class="f"><%= @listing.feature2 %></div>
+									<div class="f"><%= @listing.feature3 %></div>
+									<div class="f"><%= @listing.feature4 %></div>
+									<div class="f"><%= @listing.feature5 %></div><br />
 										<span style="font-size:25px;border:1px solid #008ac1;padding:6px">
 											₹ <%= @listing.price %>
 										</span><br /><br />
@@ -65,8 +65,8 @@
 					   </div>	
 					   			   	
 						<div class= "col-md-12 col-xs-12">
-							<h4>Product Description:</h4>
-								<%= @listing.description %><br /><br />
+							<h4 style="font-family: 'Slot-Regular', sans-serif; font-size: 30px; font-weight: bold">Product Description:</h4>
+								<div class="des" style="font-family:'Lato-Medium', sans-serif'"><%= @listing.description %><br /><br />
 								<%= link_to 'More from this seller', @listing_seller, class: "btn btn-danger" %><br /><br />
 							
 						</div>
@@ -83,12 +83,12 @@
 	</div>
 </div>
 
-	<nav class="navbar navbar-default" style="background-color:#fff;border: 1px solid #000">
+	<nav class="navbar navbar-default" style="background-color:#000;border: 1px solid #000">
   <div class="container-fluid">
     <div class="navbar-header">
       <div class ="navbar-brand">
-          <div class="seperator"style="color:#000">
-          	<h4 style="margin-top:4px">Products based on similar themes</h4>
+          <div class="seperator">
+          	<h4 style="margin-top:4px; font-family: 'signify', sans-serif; color: #fff">Check these out as well</h4>
           </div>
       </div>
     </div>
