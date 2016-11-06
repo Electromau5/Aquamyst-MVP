@@ -15,38 +15,38 @@
 <% if @subcategory.apparel %>
     <% Subcategory.all.where(:apparel => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" if sub.apparel %></li><br />
+      <li><%= link_to sub.name, sub if sub.apparel %></li><br />
     </div>
     <% end %>
     <% elsif @subcategory.accessory %>
     <% Subcategory.all.where(:accessory => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" %></li><br />
+      <li><%= link_to sub.name, sub %></li><br />
     </div>
     <% end %>
      <% elsif @subcategory.mobile %>
     <% Subcategory.all.where(:mobile => true).each   do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" %></li><br />
+      <li><%= link_to sub.name, sub %></li><br />
     </div>
     <% end %>
    <% elsif @subcategory.laptop %>
     <% Subcategory.all.where(:laptop => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" if sub.laptop %></li><br />
+      <li><%= link_to sub.name, sub if sub.laptop %></li><br />
     </div>
     <% end %>
    <% elsif @subcategory.home %>
     <% Subcategory.all.where(:home => true).each do |sub| %>
       <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" if sub.home %></li><br />
+      <li><%= link_to sub.name, sub if sub.home %></li><br />
     </div>
     <% end %>
   <% else %> 
     <%if @subcategory.other %>
       <% Subcategory.all.where(:other => true).each do |sub| %>
         <div class="sub-headers">
-      <li><%= link_to sub.name, sub, class: "btn btn-default" if sub.other %></li><br />
+      <li><%= link_to sub.name, sub if sub.other %></li><br />
     </div>
       <% end %>
     <% end %>
@@ -56,9 +56,9 @@
 </div>
 <% if @subcategory.gender1 || @subcategory.gender2 || @subcategory.gender3 %>
     	<div class="col-md-12 text-center" id="consumer-type">
-			<%= link_to @subcategory.gender1, men_path, class: "btn btn-default btn-lg" if @subcategory.gender1 %>
-			<%= link_to @subcategory.gender2, women_path, class: "btn btn-default btn-lg" if @subcategory.gender2 %>
-			<%= link_to @subcategory.gender3, both_path, class: "btn btn-default btn-lg" if @subcategory.gender3 %>
+			<%= link_to @subcategory.gender1, men_path if @subcategory.gender1 %>
+			<%= link_to @subcategory.gender2, women_path if @subcategory.gender2 %>
+			<%= link_to @subcategory.gender3, both_path if @subcategory.gender3 %>
 		</div>
 <% end %>
         
