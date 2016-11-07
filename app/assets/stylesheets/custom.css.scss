@@ -109,6 +109,7 @@ html, body
     width: 100%;
     background-size: cover;
     overflow: hidden;
+    position: relative;
 }
 .landing-logo
 {
@@ -220,5 +221,23 @@ html, body
 .sub-headers > li > a
 {
     color: #000;
+}
+
+.sub-tagline
+{
+    font-family: 'signify', sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+
+}
+.tagline
+{
+    font-family: 'Lato-Heavy', sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 150px;
+    
 }
 
