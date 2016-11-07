@@ -11,17 +11,18 @@
 
 .seller-name
 {
-	color:#000;
-	font-family: "Raleway-Regular", sans-serif;
+	color:#00a6bc;
+	font-family: "signify", sans-serif;
 }
 
 .seller-description
 {
-	
+	color: #337ab7;	
 }
 .seller-description > p
 {
 	font-size: 17px;
+	font-family: 'Lato-Light', sans-serif;
 }
 
 .seller-listing
@@ -29,6 +30,11 @@
 	text-align: center;
 	margin-top: -12px;
 	font-size: 12px;
+}
+
+.seller-location > p
+{
+	font-family: 'Lato-Regular', sans-serif;
 }
 
 small > a
