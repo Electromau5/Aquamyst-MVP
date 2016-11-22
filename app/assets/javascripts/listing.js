@@ -17,11 +17,10 @@ $(document).ready(function() {
 $(function() {
   return $('.zoom').elevateZoom({
     gallery: 'gallery',
-    zoomWindowPosition: 3,
-    scrollZoom: true,
+    zoomType: "inner",
     responsive: true,
     borderSize: 1,
-    cursor: 'pointer',
+    cursor: 'crosshair',
     galleryActiveClass: 'active',
     imageCrossfade: true
   });
