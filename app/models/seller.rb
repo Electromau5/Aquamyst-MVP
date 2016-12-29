@@ -6,4 +6,6 @@ class Seller < ActiveRecord::Base
   has_many :listings
   validates :name, presence: true
   validates :name, uniqueness: true
+  extend FriendlyId
+  friendly_id :name
 end

@@ -9,13 +9,28 @@ Rails.application.routes.draw do
 
   devise_for :sellers, :path => '', :path_names => { :sign_up => 'thenorthremembers' }, 
                                      controllers: {registrations: 'registrations'}
-
+ 
+ 
+  devise_for :users, controllers: {registrations: 'registrations'}
 
   resources :sellers, only: [:show]
+
+  resources :users, only: [:show]
+
+  #get 'users#edit', path: 'users/edit' 
 
   root 'listings#landing'
   
   resources :listings
+
+  resources :listings do
+    put :save, on: :member
+  end
+
+  resources :listings do
+    put :remove, on: :member
+  end
+
 
   get 'listings/:id/remove_image2', to: 'listings#remove_image2', as: 'remove_listing_image2'
 

@@ -1,20 +1,21 @@
 class ListingsController < ApplicationController
     
 before_action :set_listing, only: [:show, :edit, :update, :destroy]
-before_action :authenticate_seller!, except: [:index, :show, :landing]
+before_action :authenticate_seller!, except: [:index, :show, :landing, :save, :remove]
+before_action :authenticate_user!, only: [:save, :remove]
 before_action :require_sameseller, only: [:edit, :update, :destroy]
 
 
   def landing
-    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
+    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
   end
 
   def index
-   @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+   @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
    if params[:search]
-      @listings = Listing.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+      @listings = Listing.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     else
-      @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+      @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     end
   end
 
@@ -43,6 +44,8 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
     end
 
     def show
+      @user = current_user
+      #@listing_user = current_user.listings(@listing)
       @listing_seller = @listing.seller
     end
 
@@ -50,6 +53,19 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
         @listing.destroy
         redirect_to root_path
     end
+
+    def save
+        @listing = Listing.find(params[:id])
+        current_user.listings << @listing
+        redirect_to listing_path(@listing), flash: { success: 'Product has been saved'}
+    end
+
+    def remove 
+      @listing = Listing.find(params[:id])
+      current_user.listings.delete(@listing)
+      redirect_to listing_path(@listing), flash: { success: 'Product has been removed from your catalogue'}
+    end
+
 
     def remove_image2
       @listing = Listing.find(params[:id])

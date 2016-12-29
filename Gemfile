@@ -23,6 +23,7 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'modernizr-rails'
 gem 'rack-cors'
 gem 'will_paginate-bootstrap'
+gem 'friendly_id', '~> 5.2'
 
 
 group :development, :test do

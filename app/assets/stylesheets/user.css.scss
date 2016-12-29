@@ -1,0 +1,53 @@
+.catalogue
+{
+	display: inline;
+	text-align: center;
+}
+
+.catalogue > a
+{
+	font-size: 20px;
+	color: #fff;
+	font-family: 'Vonique64', sans-serif;
+}
+
+.catalogue >a:hover
+{
+	text-decoration: none;
+}
+
+.login
+{
+	margin-top: 6px;
+	margin-right: 20px;
+	float: right;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.login > a
+{
+	font-family: 'signify', sans-serif;
+	color: #40DDF5;
+	font-size: 15px;
+}
+
+.login > a:hover
+{
+	text-decoration: none;
+}
+
+#user-header
+{
+	margin-top: -29px;
+	padding-left: 5px;
+	padding-right: 5px;
+
+}
+.user-name > h1
+{
+	font-size: 25px;
+}
+

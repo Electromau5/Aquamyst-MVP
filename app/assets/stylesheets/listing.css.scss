@@ -64,6 +64,28 @@
 	font-family: 'Vonique64', sans-serif;
 }
 
+.save-remove
+{
+	float: right;
+	border: 1px solid #00965E;
+	padding: 10px;
+	width: 80px;
+	border-radius: 5px;
+	background-color: #00965E;
+	text-align: center;
+}
+
+.save-remove > a
+{
+	color: #fff;
+	font-family:'Raleway-Light', sans-serif;
+}
+
+.save-remove > a:hover
+{
+	text-decoration: none;
+}
+
 .seller-name-on-product
 {
 	font-family: 'signify', sans-serif;

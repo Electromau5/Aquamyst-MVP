@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="user-name">
+            <h1><%= @user.name %></h1>
+          </div>
+        </div>
+    </div><br />
+</div>
+</div>
+<div id="user-header">
+	<div class="col-xs-6 col-md-6" style="text-align:center; border: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; border-radius: 5px; background-color: #000 ">
+		<div class="catalogue"><%= link_to 'MY BRANDS', '#' %></div>
+	</div>
+	<div class="col-xs-6 col-md-6" style="text-align:center; border: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; border-radius: 5px; background-color: #000">
+		<div class="catalogue"><%= link_to 'MY CATALOGUE', user_path(current_user) %></div>
+	</div>
+</div><br /><br />
+<%= render 'listings/listing', obj: @user_listings %>
+

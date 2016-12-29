@@ -1,7 +1,13 @@
 <div class = "container">
 	<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
 <%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
-				
+	<% if user_signed_in? %>
+		<% if @listing.users.include?(current_user) %>
+			<div class="save-remove"><%= link_to 'Remove', remove_listing_path(@listing), method: :put %></div>
+				<% else %>
+			<div class="save-remove"><%= link_to 'Save', save_listing_path(@listing), method: :put %></div>		
+		<% end %><br /><br />
+	<% end %>	
 		<div class = "row">
 			<div class = "col-md-6">
 					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %><br /><br /><br />

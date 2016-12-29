@@ -12,6 +12,8 @@ class Listing < ActiveRecord::Base
   validates :site, presence: true
   validates :description, presence: true, length: { maximum: 500 }
 
+  has_and_belongs_to_many :users
+
 
   has_attached_file :image, styles: { medium: ["300x300>", :jpg, :quality => 70], thumb: 
                     ["100x100>", :jpg, :quality => 70],  large:  
