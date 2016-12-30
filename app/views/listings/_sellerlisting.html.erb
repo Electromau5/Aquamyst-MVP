@@ -2,12 +2,15 @@
     <div class = "row" id="grid">
       <% obj.each do |x| %>
           <div class = "col-xs-6 col-md-3" id="listing-box">
-            <div class = "thumbnail"style="height:250px">
-                  <%= link_to image_tag(x.avatar.url(:medium), class: 'img-circle'), x %>
-            </div>
-              <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px; text-align:center">
-                  <small style="font-size: 30px"><%= link_to x.name, x %></smaill>
+            <div class = "thumbnail"style="padding:6px">
+                  <%= link_to image_tag(x.avatar.url(:medium)), x %>
+                </div>
+                  <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+                    <div class = "listing_name">
+                  <%= link_to (truncate(x.name, length: 100)) %>
               </div>
+            </div>
+        </div>
       <% end %>
   </div>
   </div>
