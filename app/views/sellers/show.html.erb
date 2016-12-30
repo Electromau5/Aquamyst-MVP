@@ -1,6 +1,9 @@
 <div class="container-fluid">
 	<div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
 		<div class="row">
+			<div class="col-md-3">
+				<%= image_tag(@seller.avatar(:medium), class: 'img-circle') if @seller.avatar? %>
+			</div>
 				<div class="col-md-6">
 					<div class="seller-name">
 						<h1><%= @seller.name %></h1>
@@ -13,6 +16,16 @@
 							</div>
 				</div>
 		</div><br />
+		<% if user_signed_in? %>
+		<% if @seller.users.include?(current_user) %>
+			<div class="save-remove"><%= link_to 'Unfollow', unfollow_seller_path(@seller), method: :put %></div>
+				<% else %>
+			<div class="save-remove"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %></div>	
+		<% end %><br /><br />
+	<% else %>
+		<div class="not-signed-in">You must be signed in to follow brands</div>
+	<% end %>	
+	
 			<div class="icons">
 				<%= link_to image_tag('pinterest.png'), @seller.social4, :target => "_blank"   if @seller.social4? %>
 				<%= link_to image_tag('instagram.png'), @seller.social3, :target => "_blank"   if @seller.social3? %>

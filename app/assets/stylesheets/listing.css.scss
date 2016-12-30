@@ -64,26 +64,49 @@
 	font-family: 'Vonique64', sans-serif;
 }
 
+.not-signed-in
+{
+	float: right;
+	border: 1px solid gray;
+	padding: 10px;
+	width: 200px;
+	border-radius: 5px;
+	background-color: #fff;
+	text-align: center;
+	margin-top: -65px;
+}
+
 .save-remove
 {
 	float: right;
-	border: 1px solid #00965E;
+	border: 1px solid #40DDF5;
 	padding: 10px;
-	width: 80px;
+	width: 200px;
 	border-radius: 5px;
-	background-color: #00965E;
+	background-color: #fff;
 	text-align: center;
+	margin-top: -50px;
 }
 
 .save-remove > a
 {
-	color: #fff;
-	font-family:'Raleway-Light', sans-serif;
+	color: #D9534F;
+	font-family:'Runaway', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .save-remove > a:hover
 {
 	text-decoration: none;
+	background-color: #40DDF5;
+	color: #fff;
+}
+
+.save-remove:hover
+{
+	background-color: #40DDF5;
+	color: #fff
 }
 
 .seller-name-on-product

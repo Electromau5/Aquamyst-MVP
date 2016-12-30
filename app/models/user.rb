@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   friendly_id :name
 
   has_and_belongs_to_many :listings
+  has_and_belongs_to_many :sellers
 
   has_attached_file :profile, styles: { medium: ["300x300>", :jpg, :quality => 70], thumb: 
                     ["100x100>", :jpg, :quality => 70],  large:  

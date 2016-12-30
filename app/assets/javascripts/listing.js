@@ -12,8 +12,6 @@ $(document).ready(function() {
                       });
                             });
                   });
-
-
 $(function() {
   return $('.zoom').elevateZoom({
     gallery: 'gallery',

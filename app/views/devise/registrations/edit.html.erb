@@ -27,6 +27,12 @@
     <%= f.label :description, 'Business description' %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: "form-control"%><br />
+  </div>
+
   <div class="form-group">
     <%= f.label :location %>
     <%= f.text_field :location, class: 'form-control' %>
