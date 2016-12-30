@@ -1,3 +1,33 @@
+.follow-unfollow
+{
+	border: 1px solid #40DDF5;
+	padding: 10px;
+	width: 200px;
+	border-radius: 5px;
+	background-color: #40DDF5;
+	text-align: center;
+}
+
+.follow-unfollow > a
+{
+	color: #fff;
+	font-family:'Runaway', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.follow-unfollow > a:hover
+{
+	text-decoration: none;
+	color: #fff;
+}
+
+.follow-unfollow:hover
+{
+	background-color: #40DDF5;
+	color: #fff
+}
+
 .icons
 {
 	float: right;
@@ -64,4 +94,9 @@ small > a
 {
 	height: 200px;
 	margin-top: 20px;
+}
+
+.user-count
+{
+	font-family: 'Raleway-Regular', sans-serif;
 }

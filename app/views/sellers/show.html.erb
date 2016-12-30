@@ -14,18 +14,32 @@
 							<div class="seller-location">
 								<p><%= @seller.location %></p>
 							</div>
+							<div class="f-u">
+							<% if user_signed_in? %>
+								<% if @seller.users.include?(current_user) %>
+									<div class="follow-unfollow"><%= link_to 'Unfollow', unfollow_seller_path(@seller), method: :put %>
+									</div>
+								<% else %>
+									<div class="follow-unfollow"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %>
+									</div>	
+								<% end %>
+							<% else %>
+								<div class="not-signed-in">You must be signed in to follow brands</div>
+							<% end %>
+							</div><br />	
+							<% if @seller.users.count == 1 %>
+								<div class="user-count">
+									<%= @seller.users.count %>
+										<p>Follower</p>
+								</div>
+							<% elsif @seller.users.count > 1 || @seller.users.count < 1 %>							
+								<div class="user-count">
+									<%= @seller.users.count %>				
+										<p>Followers</p>
+								</div>
+							<% end %>
 				</div>
 		</div><br />
-		<% if user_signed_in? %>
-		<% if @seller.users.include?(current_user) %>
-			<div class="save-remove"><%= link_to 'Unfollow', unfollow_seller_path(@seller), method: :put %></div>
-				<% else %>
-			<div class="save-remove"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %></div>	
-		<% end %><br /><br />
-	<% else %>
-		<div class="not-signed-in">You must be signed in to follow brands</div>
-	<% end %>	
-	
 			<div class="icons">
 				<%= link_to image_tag('pinterest.png'), @seller.social4, :target => "_blank"   if @seller.social4? %>
 				<%= link_to image_tag('instagram.png'), @seller.social3, :target => "_blank"   if @seller.social3? %>
