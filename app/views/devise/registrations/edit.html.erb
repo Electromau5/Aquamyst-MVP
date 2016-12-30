@@ -14,41 +14,47 @@
     <%= f.email_field :email, class: 'form-control' %>
   </div>
 
-  <% if resource == current_user %>
-
-    <%= f.label :profile %>
-    <%= f.file_field :profile, class: "form-control"%><br />
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: "form-control"%><br />
+  </div>
+ 
+ <% if resource == current_user %>
+  
+    <div class="form-group">
+      <%= f.label :description, 'Describe yourself (Maximum 140 characters)' %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
   
   <% end %>
   
-  <% if resource == current_seller %> 
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
   
+  <% if resource == current_seller %>
+
   <div class="form-group">
     <%= f.label :description, 'Business description' %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: "form-control"%><br />
-  </div>
-
-  <div class="form-group">
-    <%= f.label :location %>
-    <%= f.text_field :location, class: 'form-control' %>
-  </div>
-  <div class="form-group">
     <%= f.label :social1, 'Facebook link' %>
     <%= f.text_field :social1, class: 'form-control' %>
   </div>
+  
   <div class="form-group">
     <%= f.label :social2, 'Twiiter link' %>
     <%= f.text_field :social2, class: 'form-control' %>
   </div>
+  
   <div class="form-group">
     <%= f.label :social3, 'Instagram link' %>
     <%= f.text_field :social3, class: 'form-control' %>
   </div>
+  
   <div class="form-group">
     <%= f.label :social4, 'Pinterest link' %>
     <%= f.text_field :social4, class: 'form-control' %><br />

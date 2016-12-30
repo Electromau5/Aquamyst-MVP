@@ -1,9 +1,18 @@
 <div class="container-fluid">
   <div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
     <div class="row">
+      <div class="col-md-3">
+        <% if @user.avatar? %>
+          <%= image_tag(@user.avatar(:medium), class: 'img-circle') %>
+        <% else %>
+          <div class="user-default"><%= image_tag('user.png') %></div>
+        <% end %>
+      </div>
         <div class="col-md-6">
           <div class="user-name">
             <h1><%= @user.name %></h1>
+            <p style="font-family: 'Lato-Light', sans-serif"><%= @user.location %></p>
+            <p style="font-family: 'Lato-Regular', sans-serif; font-size: 15px"><%= @user.description %></p>
           </div>
         </div>
     </div><br />
