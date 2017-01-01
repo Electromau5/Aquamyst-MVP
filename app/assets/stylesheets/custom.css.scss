@@ -82,6 +82,26 @@ html, body
     margin-right: 15px;
 }
 
+.explore
+{
+    text-align: center;
+    margin-top: 10%;
+}
+.explore > a
+{
+    border: 2px solid #2381D8;
+    padding: 10px;
+    border-radius: 5px;
+    //background-color: #33BDE5;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Raleway-Regular', sans-serif;
+    background: linear-gradient(to bottom right, #2381D8, #33BDE5);
+    background: -moz-linear-gradient(to bottom right, #2381D8, #33BDE5);
+    background: -o-linear-gradient(to bottom right, #2381D8, #33BDE5);
+    background: -linear-linear-gradient(to bottom right, #2381D8, #33BDE5);
+}
+
 .footer {
    height:155px;
    width:100%;
@@ -117,6 +137,12 @@ html, body
     margin-top: 20%;
     position: fixed;
     z-index: 1;
+}
+
+.modal-content {
+   background-image: url("city-1.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
 }
  .navbar-brand
   {
@@ -173,11 +199,6 @@ html, body
     height: 400px;
 }
 
-.explore
-{
-    text-align: center;
-    margin-top: 10%;
-}
 .modal-header
 {
     margin-top: 15%;
@@ -197,7 +218,7 @@ html, body
 }
 .modal-description
 {
-    font-family: "Raleway-Regular", sans-serif;
+    font-family: "Raleway-Light", sans-serif;
     font-size: 16px;
 }
 
