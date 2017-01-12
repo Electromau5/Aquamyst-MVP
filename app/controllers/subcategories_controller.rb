@@ -19,11 +19,11 @@ def create
 end
 
 def edit
-	@subcategory = Subcategory.find(params[:id])
+	@subcategory = Subcategory.friendly.find(params[:id])
 end
 
 def update
-	@subcategory = Subcategory.find(params[:id])
+	@subcategory = Subcategory.friendly.find(params[:id])
 		if @subcategory.update(subcategory_params)
 			redirect_to subcategory_path
 		else
@@ -32,7 +32,7 @@ def update
 end
 
 def show
-	@subcategory = Subcategory.find(params[:id])
+	@subcategory = Subcategory.friendly.find(params[:id])
 	@subcategory_listings = @subcategory.listings
 end
 

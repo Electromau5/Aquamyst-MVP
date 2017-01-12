@@ -45,6 +45,10 @@ class Listing < ActiveRecord::Base
   belongs_to :subcategory
   belongs_to :seller
 
+  extend FriendlyId
+  friendly_id :name
+
+
 def self.search(search)
   if search
     search_length = search.split.length

@@ -82,7 +82,7 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
     end
 
     def set_listing
-        @listing = Listing.find(params[:id])
+        @listing = Listing.friendly.find(params[:id])
     end
 
 

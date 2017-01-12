@@ -19,7 +19,7 @@ def create
 end
 
 def show
-	@category = Category.find(params[:id])
+	@category = Category.friendly.find(params[:id])
 	@category_subcategories = @category.subcategories
 	@category_listings = @category.listings
 end
