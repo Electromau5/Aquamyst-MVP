@@ -55,20 +55,20 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
     end
 
     def save
-        @listing = Listing.find(params[:id])
+        @listing = Listing.friendly.find(params[:id])
         current_user.listings << @listing
         redirect_to listing_path(@listing), flash: { success: 'Product has been saved'}
     end
 
     def remove 
-      @listing = Listing.find(params[:id])
+      @listing = Listing.friendly.find(params[:id])
       current_user.listings.delete(@listing)
       redirect_to listing_path(@listing), flash: { success: 'Product has been removed from your catalogue'}
     end
 
 
     def remove_image2
-      @listing = Listing.find(params[:id])
+      @listing = Listing.friendly.find(params[:id])
       @listing.image2.destroy
       @listing.save
       redirect_to edit_listing_path, flash: { success: 'Image has been removed' }
