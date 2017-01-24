@@ -1,3 +1,14 @@
+<% if @category.name == "motivation" %>
+	<div class="category-jumbo-1" style="height: 400px; margin-top: -20px"> </div>
+<% elsif @category.name == "freedom" %>
+	<div class="category-jumbo-2" style="height: 400px; margin-top: -20px"> </div>
+<% elsif @category.name == "lifestyle" %>
+	<div class="category-jumbo-3" style="height: 400px; margin-top: -20px"> </div>
+<% elsif @category.name == "geeky" %>
+	<div class="category-jumbo-4" style="height: 400px; margin-top: -20px"> </div>
+<% elsif @category.name == "interests" %>
+	<div class="category-jumbo-5" style="height: 400px; margin-top: -20px"> </div>
+<% end %>
 <%= render 'subcategories/sub', obj: @category_subcategories %>
 <%= render 'listings/listing', obj: @category_listings %>
 
