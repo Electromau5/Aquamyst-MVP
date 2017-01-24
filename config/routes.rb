@@ -39,12 +39,11 @@ Rails.application.routes.draw do
     put :remove, on: :member
   end
 
+  resources :subcategories, except: [:destroy]
 
   get 'listings/:id/remove_image2', to: 'listings#remove_image2', as: 'remove_listing_image2'
 
-  resources :categories, except: [:destroy]
-  resources :subcategories, except: [:destroy]
-
+  
   get 'men' => 'subcategories#men', path: 'subcategories/:id/men'
   get 'women' => 'subcategories#women', path: 'subcategories/:id/women'
   get 'both' => 'subcategories#both', path: 'subcategories/:id/both'
@@ -53,6 +52,10 @@ Rails.application.routes.draw do
   get 'rainsofcastamere', to: 'applicants#index'
   get 'thankyou', to: 'pages#thankyou'
 
+
+  resources :categories, :path => '', except: [:destroy]
+ 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
