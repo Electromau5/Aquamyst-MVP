@@ -10,10 +10,6 @@
 	<div class="category-jumbo-5" style="height: 400px; margin-top: -20px"> </div>
 <% end %>
 <%= render 'subcategories/sub', obj: @category_subcategories %>
-<h2  class="product-list-header">NEW PRODUCTS</h2>
+	<h2  class="product-list-header">NEW PRODUCTS</h2>
 <%= render 'listings/listing', obj: @category_listings %>
-<div class="center" style="text-align:center">
-<%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
-</div>
-
 
