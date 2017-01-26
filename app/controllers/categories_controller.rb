@@ -21,7 +21,7 @@ end
 def show
 	@category = Category.friendly.find(params[:id])
 	@category_subcategories = @category.subcategories
-	@category_listings = @category.listings
+	@category_listings = @category.listings.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
 end
 
 private

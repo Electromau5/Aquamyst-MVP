@@ -1,6 +1,6 @@
 <% if @category.name == "motivation" %>
 	<div class="category-jumbo-1" style="height: 400px; margin-top: -20px"> </div>
-<% elsif @category.name == "freedom" %>
+<% elsif @category.name == "freedomshow" %>
 	<div class="category-jumbo-2" style="height: 400px; margin-top: -20px"> </div>
 <% elsif @category.name == "lifestyle" %>
 	<div class="category-jumbo-3" style="height: 400px; margin-top: -20px"> </div>
@@ -10,5 +10,6 @@
 	<div class="category-jumbo-5" style="height: 400px; margin-top: -20px"> </div>
 <% end %>
 <%= render 'subcategories/sub', obj: @category_subcategories %>
+<h2  class="product-list-header">NEW PRODUCTS</h2>
 <%= render 'listings/listing', obj: @category_listings %>
 
