@@ -33,7 +33,7 @@ end
 
 def show
 	@subcategory = Subcategory.friendly.find(params[:id])
-	@subcategory_listings = @subcategory.listings.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+	@subcategory_listings = @subcategory.listings.order("created_at DESC")
 end
 
 def women
