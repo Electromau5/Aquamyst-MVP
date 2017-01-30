@@ -8,7 +8,7 @@
 			<div class="save-remove"><%= link_to 'Save this Tee', save_listing_path(@listing), method: :put %></div>	
 		<% end %><br /><br />
 	<% else %>
-		<div class="not-signed-in">You must be signed in to save this Tee</div>
+		<div class="save-remove"><%= link_to 'Save this Tee', new_user_registration_path %></div>
 	<% end %>	
 		<div class = "row">
 			<div class = "col-md-6">

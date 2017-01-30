@@ -20,20 +20,18 @@
   </div>
  
  <% if resource == current_user %>
-  
     <div class="form-group">
       <%= f.label :description, 'Describe yourself (Maximum 140 characters)' %>
       <%= f.text_area :description, class: 'form-control' %>
     </div>
-  
-  <% end %>
+<% end %>
   
   <div class="form-group">
     <%= f.label :location %>
     <%= f.text_field :location, class: 'form-control' %>
   </div>
   
-  <% if resource == current_seller %>
+ <% if resource == current_seller %>
 
   <div class="form-group">
     <%= f.label :description, 'Business description' %>

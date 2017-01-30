@@ -48,7 +48,6 @@ class Listing < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name
 
-
 def self.search(search)
   if search
     search_length = search.split.length

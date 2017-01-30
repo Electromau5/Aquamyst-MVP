@@ -18,14 +18,8 @@
           <% end %>
             <% if seller_signed_in? && current_seller.admin? %>
               <li><%= link_to 'Applicants', rainsofcastamere_path %></li>
-              <% end %>
+            <% end %>
         </ul>
-        <%= form_tag(listings_path, :method => "get") do %>
-          <ul class="nav navbar-nav navbar-right" id="search-form">
-            <li><%= text_field_tag :search, params[:search], placeholder: "Search for a tee......", class: "form-control" %></li>
-            <li><%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %></li>
-          </ul>
-        <% end %>
         <% if seller_signed_in? %>
           <div class="dropdown"style="margin-top:8px">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Account
@@ -37,7 +31,7 @@
                 <li><%= link_to 'Log Out', destroy_seller_session_path, method: :delete, class: "seller-header" %></li>
               </ul>
           </div>
-          <% elsif user_signed_in? %>
+        <% elsif user_signed_in? %>
             <div class="dropdown"style="margin-top:8px">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Account
                 <span class="caret"></span>
@@ -48,9 +42,9 @@
                 <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "seller-header" %></li>
               </ul>
             </div>
-            <% else %>
+        <% else %>
                 <div class="login"><%= link_to 'login', new_user_session_path %></div>
-            <% end %>
+        <% end %>
       </div>
   </div>
 </nav>

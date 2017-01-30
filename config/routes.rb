@@ -11,9 +11,11 @@ Rails.application.routes.draw do
                                      controllers: {registrations: 'registrations'}
  
  
-  devise_for :users, :path_names => { :sign_up => 'theforceiswithme'}, controllers: {registrations: 'registrations'}
+  devise_for :users, :path_names => { :sign_up => 'theforceiswithme' }, controllers: { registrations: 'registrations' }
 
   resources :sellers, only: [:show]
+
+  #get 'seller' => 'sellers#show', path: ':id'
 
   resources :sellers do
     put :follow, on: :member
