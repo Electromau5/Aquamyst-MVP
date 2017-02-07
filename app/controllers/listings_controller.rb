@@ -7,15 +7,15 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
 
 
   def landing
-    @listings = Listing.all.order("created_at, updated_at DESC").paginate(:page => params[:page], :per_page => 16)
+    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
   end
 
   def index
-   @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+   @listings = Listing.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
    if params[:search]
-      @listings = Listing.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+      @listings = Listing.search(params[:search]).order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
     else
-      @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+      @listings = Listing.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
     end
   end
 
