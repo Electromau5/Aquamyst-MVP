@@ -25,7 +25,7 @@
 									<div class="follow-unfollow"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %>
 									</div>	
 								<% end %>
-							<% else %>
+							<% elsif !seller_signed_in? && !user_signed_in? %>
 								<div class="follow-unfollow"><%= link_to 'Follow', new_user_registration_path %></div>
 							<% end %>
 							</div><br />	

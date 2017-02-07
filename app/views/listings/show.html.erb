@@ -7,7 +7,7 @@
 				<% else %>
 			<div class="save-remove"><%= link_to 'Save this Tee', save_listing_path(@listing), method: :put %></div>	
 		<% end %><br /><br />
-	<% else %>
+	<% elsif !seller_signed_in? && !user_signed_in? %>
 		<div class="save-remove"><%= link_to 'Save this Tee', new_user_registration_path %></div>
 	<% end %>	
 		<div class = "row">
