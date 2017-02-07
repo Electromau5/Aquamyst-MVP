@@ -7,7 +7,7 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
 
 
   def landing
-    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+    @listings = Listing.all.order("created_at, updated_at DESC").paginate(:page => params[:page], :per_page => 16)
   end
 
   def index
