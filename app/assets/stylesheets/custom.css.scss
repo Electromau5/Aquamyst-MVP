@@ -14,7 +14,17 @@ html, body
 /* About Us */
 .about
 {
-    font-family: "Raleway-Light", Arial;
+    font-family: "BELLABOO-Regular", sans-serif;
+}
+
+.about-body
+{
+    background: url("banner-2.jpg");
+    margin-top: -5px;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
 
 /*flash*/
