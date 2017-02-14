@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   get 'show_follow' => 'users#show_follow', path: 'users/:id/show_follow'
 
-  root 'listings#landing'
+  root 'listings#index'
   
   resources :listings
 
