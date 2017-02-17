@@ -47,6 +47,9 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
       @user = current_user
       #@listing_user = current_user.listings(@listing)
       @listing_seller = @listing.seller
+      set_meta_tags title: "#{@listing.name}",
+                    keywords: "#{@listing.keywords}",
+                    description: "#{@listing.description}"
     end
 
     def destroy
@@ -78,7 +81,8 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
     def listing_params
        params.require(:listing).permit(:name, :feature1, :feature2, :feature3, :feature4, :feature5, 
                                        :price, :cod, :time, :description, :image, 
-                                       :image2, :image3, :image4, :image5, :site, :category_id, :subcategory_id, :gender, :tag)
+                                       :image2, :image3, :image4, :image5, :site, :category_id, 
+                                       :subcategory_id, :gender, :tag, :keywords)
     end
 
     def set_listing

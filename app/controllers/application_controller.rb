@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
                :social3, :social4, 
                :password, 
                :password_confirmation, 
-               :profile)
+               :profile, :keywords)
     end
   end
 end

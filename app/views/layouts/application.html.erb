@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>  
-    <%= if content_for?(:name) then yield(:name) + ' | ' end %>
-        Where's My Tee ? | Graphic Tees from Innovative Brands
-  </title>
-  <%= favicon_link_tag 'tab-logo.png' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="p:domain_verify" content="f28842e2e65b0b88b2d9a3a711cb2f8f"/>
-   <meta name='title'
-   content='<%= yield_meta_tag(:name, 'Default title') %>' />
-    <meta name='description'
-    content='<%= yield_meta_tag(:description, 'Default description') %>' />
+<%= display_meta_tags site: "Where's My Tee ?" %>
+<%= favicon_link_tag 'tab-logo.png' %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="p:domain_verify" content="f28842e2e65b0b88b2d9a3a711cb2f8f"/>
 </head>
 <body>
 	<div class="wrapper">

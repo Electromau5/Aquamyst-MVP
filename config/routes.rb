@@ -41,8 +41,6 @@ Rails.application.routes.draw do
     put :remove, on: :member
   end
 
-  resources :subcategories, except: [:destroy]
-
   get 'listings/:id/remove_image2', to: 'listings#remove_image2', as: 'remove_listing_image2'
 
   
@@ -55,7 +53,8 @@ Rails.application.routes.draw do
   get 'thankyou', to: 'pages#thankyou'
 
 
-  resources :categories, :path => '', except: [:destroy]
+  resources :categories, :path => '',:path_names => { :edit => 'backtothefuture' }, except: [:destroy]
+  resources :subcategories,:path_names => { :edit => 'thebreakfastclub' }, except: [:destroy]
  
   
 

@@ -34,6 +34,9 @@ end
 def show
 	@subcategory = Subcategory.friendly.find(params[:id])
 	@subcategory_listings = @subcategory.listings.order("created_at DESC")
+	   set_meta_tags title: "#{@subcategory.title}",
+                  keywords: "#{@subcategory.keywords}",
+                  description: "#{@subcategory.description}"
 end
 
 def women
@@ -54,7 +57,7 @@ end
 private
 
 def subcategory_params
-	params.require(:subcategory).permit(:name, :gender1, :gender2, :gender3)
+	params.require(:subcategory).permit(:name, :gender1, :gender2, :gender3, :description, :title, :keywords)
 end
 
 end

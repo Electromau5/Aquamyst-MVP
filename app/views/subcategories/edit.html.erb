@@ -1,0 +1,24 @@
+<div class = "container-fluid">
+	<h1 style="text-align:center">SUBCATEGORY DETAILS</h1>
+		<%= render 'shared/errors', obj: @subcategory %>
+			<div class = "row">
+				<div class = "col-md-6 col-md-offset-3">
+					<%= form_for @subcategory do |s| %>
+						<%= s.label :name %><br />
+						<%= s.text_field :name, class: "form-control" %><br />
+
+						<%= s.label :title %><br />
+						<%= s.text_field :title, class: "form-control" %><br />
+
+						<%= s.label :description %><br />
+						<%= s.text_field :description, class: "form-control" %><br />
+
+						<%= s.label :keywords %><br />
+						<%= s.text_field :keywords, class: "form-control" %><br />
+
+						<%= s.submit 'Update', class: 'btn btn-primary btn-lg'  %>
+						<%= link_to 'Cancel', subcategory_path %>
+					<% end %>
+				</div>
+			</div>
+</div>

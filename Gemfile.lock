@@ -131,6 +131,8 @@ GEM
       mime-types (>= 1.16, < 4)
     masonry-rails (0.2.4)
       railties
+    meta-tags (2.4.0)
+      actionpack (>= 3.2.0, <= 5.1.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -252,6 +254,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks (~> 2.1)
   masonry-rails (~> 0.2.4)
+  meta-tags
   modernizr-rails
   paperclip (~> 4.3, >= 4.3.3)
   pg

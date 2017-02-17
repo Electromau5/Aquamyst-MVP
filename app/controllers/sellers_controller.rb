@@ -7,6 +7,9 @@ before_action :authenticate_user!, only: [:follow, :unfollow]
   def show
     @seller = Seller.friendly.find(params[:id])
     @seller_listings = @seller.listings
+    set_meta_tags title: "#{@seller.name}",
+                  keywords: "#{@seller.keywords}",
+                  description: "#{@seller.description}"
   end
 
   def follow
