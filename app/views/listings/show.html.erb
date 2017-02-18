@@ -66,7 +66,13 @@
 										</span><br /><br />
 										<div class= "cod">COD <%= @listing.cod %></div><br />
 										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
-									<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", class: "btn btn-primary" %><br /><br />
+									<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", 
+																				   :onclick => "trackOutboundLink
+																				   ('http://www.wheresmytee.com'); 
+																				   return false;",
+																				    class: "btn btn-primary" %>
+
+									<br /><br />
 					   </div>	
 					   			   	
 						<div class= "col-md-12 col-xs-12">
