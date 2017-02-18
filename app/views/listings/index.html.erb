@@ -1,41 +1,46 @@
+<% set_meta_tags title: 'We are a T-Shirt search platform with products from India',
+                 description: 'We are an online curator of graphic t-shirts from a multitude of innovative brands in India. Our vast database makes online shopping for t-shirts extremely fast and simple.',
+                 keywords: 'T-Shirts India, Tees, Men T-Shirts, Graphic T-shirts',
+                 canonical: "www.wheresmytee.com",
+                 next: "http://www.wheresmytee.com/?page=2" %>
 <div class="jumbo" style="height: 400px; margin-top: -20px">
     <div class="social-icons">
-      <%= link_to image_tag('fb.png'), 'https://www.facebook.com/wheresmyteeapp/', :target => "_blank" %>
-      <%= link_to image_tag('tweet.png'), 'https://twitter.com/wheresmytee', :target => "_blank" %>
-      <%= link_to image_tag('pin.png'), '#' %>
-      <%= link_to image_tag('in.png'), 'https://www.instagram.com/wheresmytee/', :target => "_blank" %>
+        <%= link_to image_tag('fb.png'), 'https://www.facebook.com/wheresmyteeapp/', :target => "_blank" %>
+        <%= link_to image_tag('tweet.png'), 'https://twitter.com/wheresmytee', :target => "_blank" %>
+        <%= link_to image_tag('pin.png'), '#' %>
+        <%= link_to image_tag('in.png'), 'https://www.instagram.com/wheresmytee/', :target => "_blank" %>
     </div>
-      <h2 style="text-align:center; margin-top: 110px; color: #000; font-family: 'pricedown', sans-serif; font-size: 35px">Discover amazing tees from innovative brands</h2>
-        <%= form_tag(listings_path, :method => "get") do %>
-          <div class="search-form">
-            <%= text_field_tag :search, params[:search], placeholder: "Start searching for a tee or browse our vast selection.......", class: "form-control search-1" %>
-          <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
-          </div>
-      <% end %>
+        <h2 style="text-align:center; margin-top: 110px; color: #000; font-family: 'pricedown', sans-serif; font-size: 35px">Discover amazing tees from innovative brands</h2>
+            <%= form_tag(listings_path, :method => "get") do %>
+                <div class="search-form">
+                    <%= text_field_tag :search, params[:search], placeholder: "Start searching for a tee or browse our vast selection.......", class: "form-control search-1" %>
+                    <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
+                </div>
+            <% end %>
         <h2 style="text-align:center; color: #fff; margin-top: -5px">Explore and find your tee</h2>
 </div>
-<div class = "container-fluid">
-  <h2  class="product-list-header">NEW PRODUCTS</h2>
-    <div class = "row" id="grid">
-          <% @listings.each do |listing| %>
-          <div class = "col-xs-6 col-md-3" id="listing-box">
-            <div class = "thumbnail"style="padding:6px">
-                <%= link_to image_tag(listing.image.url(:medium)), listing %>
-                </div>
-                  <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+    <div class = "container-fluid">
+        <h2  class="product-list-header">NEW PRODUCTS</h2>
+            <div class = "row" id="grid">
+                <% @listings.each do |listing| %>
+                    <div class = "col-xs-6 col-md-3" id="listing-box">
+                        <div class = "thumbnail"style="padding:6px">
+                            <%= link_to image_tag(listing.image.url(:medium)), listing %>
+                        </div>
+                      <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
                     <div class = "listing_name">
-                  <%= truncate(listing.name, length: 100) %>
-              </div>
+                      <%= truncate(listing.name, length: 100) %>
+                    </div>
               <div class="seller-listing">
-                by<br />
-                  <small><%= link_to listing.seller.name,listing.seller if listing.seller%></small><br />
+                  by<br />
+                    <small><%= link_to listing.seller.name,listing.seller if listing.seller%></small><br />
               </div>
+                    </div>
+                    </div>
+                <% end %>
             </div>
-        </div>
-      <% end %>
-  </div>
-  </div>
+    </div>
   <div class="center" style="text-align:center">
-<%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
-</div>
+      <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+  </div>
  

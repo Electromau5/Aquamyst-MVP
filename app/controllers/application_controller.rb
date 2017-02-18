@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def show
+    set_meta_tags title: "We are a T-Shirt search engine"
+  end
   
   protected
 
