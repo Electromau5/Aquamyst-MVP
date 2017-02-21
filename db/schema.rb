@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217195343) do
+ActiveRecord::Schema.define(version: 20170221082815) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
@@ -122,11 +122,11 @@ ActiveRecord::Schema.define(version: 20170217195343) do
     t.string  "gender1"
     t.string  "gender2"
     t.string  "gender3"
-    t.boolean "apparel",     default: false
-    t.boolean "accessory",   default: false
-    t.boolean "mobile",      default: false
-    t.boolean "laptop",      default: false
-    t.boolean "home",        default: false
+    t.boolean "nerd",        default: false
+    t.boolean "motive",      default: false
+    t.boolean "free",        default: false
+    t.boolean "life",        default: false
+    t.boolean "intr",        default: false
     t.boolean "other",       default: false
     t.integer "category_id"
     t.string  "title"

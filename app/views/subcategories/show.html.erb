@@ -13,34 +13,34 @@
    
 <div class="collapse navbar-collapse" id="myNavbar">
   
-  <% if @subcategory.apparel %>
-    <% Subcategory.all.where(:apparel => true).each do |sub| %>
+  <% if @subcategory.nerd %>
+    <% Subcategory.all.where(:nerd => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub if sub.apparel %></li><br />
+      <li><%= link_to sub.name, sub if sub.nerd %></li><br />
     </div>
     <% end %>
-    <% elsif @subcategory.accessory %>
-    <% Subcategory.all.where(:accessory => true).each do |sub| %>
+    <% elsif @subcategory.motive %>
+    <% Subcategory.all.where(:motive => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub %></li><br />
+      <li><%= link_to sub.name, sub if sub.motive %></li><br />
     </div>
     <% end %>
-     <% elsif @subcategory.mobile %>
-    <% Subcategory.all.where(:mobile => true).each   do |sub| %>
+     <% elsif @subcategory.free %>
+    <% Subcategory.all.where(:free => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub %></li><br />
+      <li><%= link_to sub.name, sub if sub.free %></li><br />
     </div>
     <% end %>
-   <% elsif @subcategory.laptop %>
-    <% Subcategory.all.where(:laptop => true).each do |sub| %>
+   <% elsif @subcategory.life %>
+    <% Subcategory.all.where(:life => true).each do |sub| %>
     <div class="sub-headers">
-      <li><%= link_to sub.name, sub if sub.laptop %></li><br />
+      <li><%= link_to sub.name, sub if sub.life %></li><br />
     </div>
     <% end %>
-   <% elsif @subcategory.home %>
-    <% Subcategory.all.where(:home => true).each do |sub| %>
+   <% elsif @subcategory.intr %>
+    <% Subcategory.all.where(:intr => true).each do |sub| %>
       <div class="sub-headers">
-      <li><%= link_to sub.name, sub if sub.home %></li><br />
+      <li><%= link_to sub.name, sub if sub.intr %></li><br />
     </div>
     <% end %>
   <% else %> 
