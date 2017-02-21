@@ -49,8 +49,8 @@ class Listing < ActiveRecord::Base
 def self.search(search)
   if search
     search_length = search.split.length
-    where([(['name ILIKE ?'] * search_length).join(' AND ')] + search.split.map { |name| "%#{name}%" })
-    where([(['tag ILIKE ?'] * search_length).join(' AND ')] + search.split.map { |name| "%#{tag}%" })
+    where([(['name ILIKE ?'] * search_length).join(' AND ')] + search.split.map { |name| "%#{name}%" }) 
+    where([(['tag ILIKE ?'] * search_length).join(' AND ')] + search.split.map { |tag| "%#{tag}%" })
   else
     find(:all)
   end 
