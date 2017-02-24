@@ -7,11 +7,13 @@
 				<div class = "col-md-6 col-xs-12">
 					<%= form_for @listing do |l| %>
 						<%= l.label :name, 'Name (Maximum 75 Characters)' %><br />
-						<%= l.text_field :name, class: "form-control" %><br />
+						<%= l.text_field :name, placeholder: 'Use simple terms...', class: "form-control" %><br />
 						<%= l.label :category %><br />
   						<%= l.select :category_id, options_for_select(Category.all.map{|s|[s.name, s.id]}) %><br /><br />
 						<%= l.label :subcategory, 'Subcategory' %><br />
   						<%= l.select :subcategory_id, options_for_select(Subcategory.all.map{|s|[s.name, s.id]}) %><br /><br />
+  						<%= l.label :tag, 'Keywords (please use a space after each word)' %>
+						<%= l.text_field :tag, placeholder: 'game of thrones tyrion drogon.....', class: "form-control" %><br/>
 						<%= l.label :gender, 'Target Consumer (only for Apparel and Accessories)' %><br />
 						<%= l.radio_button :gender, 'men' %> 
   						<%= label :gender_men, 'Men' %><br />
@@ -22,7 +24,7 @@
   				</div>		
   				<div class = "col-md-6 col-xs-12">
 						<%= l.label :feature1, 'Feature1 (Maximum 150 characters)' %>
-						<%= l.text_field :feature1, class: "form-control" %>
+						<%= l.text_field :feature1, placeholder: 'What makes this product special....', class: "form-control" %>
 						<%= l.label :feature2, 'Feature2 (Maximum 150 characters)'%>
 						<%= l.text_field :feature2, class: "form-control" %>
 						<%= l.label :feature3, 'Feature3 (Maximum 150 characters)' %>
@@ -46,10 +48,10 @@
   						<%= label :cod_contact, 'Contact Seller' %><br /><br />
 						<%= l.label :time, 'Delivery Time' %><br />
 						<%= l.text_field :time, class: "form-control" %><br />
-						<%= l.label :site, 'Link to product' %><br />
-						<%= l.text_field :site, class: "form-control" %><br />
+						<%= l.label :site, 'Link to tee' %><br />
+						<%= l.text_field :site, placeholder: 'where can you buy it....', class: "form-control" %><br />
 						<%= l.label :description, 'Detailed Description (Maximum 500 characters)' %>
-						<%= l.text_area :description, class: "form-control" %><br /><br />
+						<%= l.text_area :description, placeholder: 'This will make your tee stand out on search engines. Create a unique and effective description.....', class: "form-control" %><br /><br />
 					</div>
 					<div class = "col-md-6 col-xs-12">
 						<%= l.label :image %>

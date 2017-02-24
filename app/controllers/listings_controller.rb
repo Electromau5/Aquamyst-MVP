@@ -48,7 +48,7 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
       #@listing_user = current_user.listings(@listing)
       @listing_seller = @listing.seller
       set_meta_tags title: "#{@listing.name}",
-                    keywords: "#{@listing.keywords}",
+                    keywords: "#{@listing.tag}",
                     description: "#{@listing.description}"
     end
 
