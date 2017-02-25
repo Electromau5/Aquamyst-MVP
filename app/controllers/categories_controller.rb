@@ -34,7 +34,12 @@ end
 def show
 	@category = Category.friendly.find(params[:id])
 	@category_subcategories = @category.subcategories
-	@category_listings = @category.listings.order("created_at DESC")
+	#@category_listings = @category.listings.order("created_at DESC")
+	if params[:search]
+    	@category_listings = @category.listings.search(params[:search]).order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
+    else
+      	@category_listings = @category.listings.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
+    end
 	set_meta_tags title: "#{@category.title}",
                   keywords: "#{@category.keywords}",
                   description: "#{@category.description}"

@@ -25,6 +25,7 @@ gem 'rack-cors'
 gem 'will_paginate-bootstrap'
 gem 'friendly_id', '~> 5.2'
 gem 'meta-tags'
+gem 'sitemap_generator'
 
 
 group :development, :test do
