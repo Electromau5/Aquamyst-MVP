@@ -1,3 +1,4 @@
+<div itemscope itempro="organization" itemtype="http://schema.org/Organization">
 <div class="container-fluid">
 	<div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
 		<div class="row">
@@ -6,13 +7,20 @@
 			</div>
 				<div class="col-md-6">
 					<div class="seller-name">
-						<h1><%= @seller.name %></h1>
+						<span itemprop="brand">
+							<h1><%= @seller.name %></h1>
+						</span>
 					</div>
 						<div class="seller-description">
-							<p><%= @seller.description %></p>
+							<span itemprop="description">
+								<p><%= @seller.description %></p>
+							</span>
 						</div>
 							<div class="seller-location">
-								<p><%= @seller.location %></p>
+									<span itemprop="location">
+										<p><%= @seller.location %></p>
+									</span>		
+								</span>
 							</div>
 							<div class="f-u">
 							<% if user_signed_in? %>
@@ -52,7 +60,9 @@
 	<% if current_seller == @seller && @seller_listings.count < 10 %>
 		<%= link_to 'Add a new product', new_listing_path, class: "btn btn-default" %><br /><br />
 	<% end %>
+</div>
 <%= render 'listings/listing', obj: @seller_listings %>
+
  			
 
 

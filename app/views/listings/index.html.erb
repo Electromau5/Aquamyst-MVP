@@ -1,9 +1,17 @@
+<div itemscope itemtype="http://schema.org/WebSite">
+  <meta itemprop="url" content="http://www.wheresmytee.com/"/>
+    <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="http://www.wheresmytee.com/listings?utf8=✓&search={search_term_string}"/>
+      <input itemprop="query-input" type="text" name="search_term_string" required/>
+      <input type="submit"/>
+    </form>
+</div>
 <% set_meta_tags title: 'We are a t-shirt search platform based in India',
                  description: 'We are an online curator of graphic t-shirts for men from a multitude of innovative brands in India. Our vast database makes online shopping extremely fast and simple.',
                  keywords: 'T-Shirts, India, Men, Graphic Tees',
                  canonical: "www.wheresmytee.com",
                  next: "http://www.wheresmytee.com/?page=2" %>
-<div class="jumbo" style="height: 400px; margin-top: -20px">
+<div class="jumbo" style="height: 400px; margin-top: -45px">
         <h2 style="text-align:center; margin-top: 110px; color: #000; font-family: 'pricedown', sans-serif; font-size: 35px">Discover amazing tees from innovative brands</h2>
             <%= form_tag(listings_path, :method => "get") do %>
                 <div class="search-form">
@@ -19,15 +27,22 @@
                 <% @listings.each do |listing| %>
                     <div class = "col-xs-6 col-md-3" id="listing-box">
                         <div class = "thumbnail"style="padding:6px">
-                            <%= link_to image_tag(listing.image.url(:medium)), listing %>
+                          <%= link_to image_tag(listing.image.url(:medium)), listing %>
                         </div>
                       <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
                     <div class = "listing_name">
-                      <%= truncate(listing.name, length: 100) %>
+                      <span itemprop="name">
+                        <%= truncate(listing.name, length: 100) %>
+                      </span>
                     </div>
               <div class="seller-listing">
                   by<br />
-                    <small><%= link_to listing.seller.name,listing.seller if listing.seller%></small><br />
+
+                    <small>
+                      <span itemprop="manufacturer">
+                        <%= link_to listing.seller.name,listing.seller if listing.seller%>
+                      </span>
+                    </small><br />
               </div>
                     </div>
                     </div>

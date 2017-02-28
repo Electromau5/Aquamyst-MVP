@@ -1,3 +1,4 @@
+<div itemscope itemtype="http://schema.org/Product">
 <div class = "container">
 	<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
 <%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
@@ -12,7 +13,7 @@
 	<% end %>	
 		<div class = "row">
 			<div class = "col-md-6">
-					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %><br /><br /><br />
+					<img itemprop="itemprop"<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %> /><br /><br /><br />
 						<div class ="row">
 
 							<div class = "col-md-12 col-xs-12">
@@ -44,15 +45,19 @@
 					<div class = "col-md-6">
 						<div class = "listing_set_1">
 							<div class="title">
-								Product Name: <br/>
+									Product Name: <br/>
 							</div>
 								<div class="fill">
-									<%= @listing.name %>
+									<span itemprop="name">
+										<%= @listing.name %>
+									</span>		
 								</div>
 									<div class="by"style="font-weight:bold">by</div>
 										
 						</div>
-						<div class="seller-name-on-product"><%= link_to @listing.seller.name, @listing.seller %></div><br />
+						<div class="seller-name-on-product">
+							<span itemprop="manufacturer"><%= link_to @listing.seller.name, @listing.seller %></span>
+						</div><br />
 								<div class="title">
 									Key Features: <br/>
 								</div>
@@ -62,7 +67,8 @@
 									<div class="f"><%= @listing.feature4 %></div>
 									<div class="f"><%= @listing.feature5 %></div><br />
 										<span style="font-size:25px;border:1px solid #008ac1;padding:6px">
-											₹ <%= @listing.price %>
+										<span itemprop="priceCurrency" content="INR"> ₹ </span> 
+										<span itemprop="price"><%= @listing.price %></span>
 										</span><br /><br />
 										<div class= "cod">COD <%= @listing.cod %></div><br />
 										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
@@ -77,19 +83,19 @@
 					   			   	
 						<div class= "col-md-12 col-xs-12">
 							<h4 style="font-family: 'Slot-Regular', sans-serif; font-size: 30px; font-weight: bold">Product Description:</h4>
-								<div class="des" style="font-family:'Lato-Medium', sans-serif'"><%= @listing.description %><br /><br />
+								<div class="des" style="font-family:'Lato-Medium', sans-serif'"> 
+									you
+										<%= @listing.description %>
+									</span><br /><br />
 								<%= link_to 'More from this seller', @listing_seller, class: "btn btn-danger" %><br /><br />
-							
+								</div>
+								<div class = "col-md-4">
+									<% if current_seller == @listing.seller %>
+										<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
+										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
+									<% end %>
+								</div><br />
 						</div>
-						<div class = "col-md-4">
-								<% if current_seller == @listing.seller %>
-								<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
-								<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
-							
-						<% end %>
-					</div><br />
-				
-		</div>
 	</div>
 </div>
 </div>
@@ -122,6 +128,7 @@
 			 			</div>
 			 	</div>
 		<% end %>
+</div>
 
 		
 
