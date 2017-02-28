@@ -6,6 +6,8 @@
                 </div>
             <% end %>
 </div>
-<%= render 'subcategories/sub', obj: @category_subcategories %>
+<% if @category_subcategories.present? %>
+	<%= render 'subcategories/sub', obj: @category_subcategories %>
+<% end %>
 	<h2  class="product-list-header">NEW PRODUCTS</h2>
 <%= render 'listings/listing', obj: @category_listings %>
