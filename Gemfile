@@ -26,6 +26,7 @@ gem 'will_paginate-bootstrap'
 gem 'friendly_id', '~> 5.2'
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'whenever', :require => false
 
 
 group :development, :test do
