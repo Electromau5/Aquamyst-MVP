@@ -12,7 +12,11 @@ SitemapGenerator::AwsSdkAdapter
 
 SitemapGenerator::Sitemap.create do
 
-  add root_path
+  add root_path, :priority => 1.0
+  add '/pages/about'
+  add '/pages/careers'
+  add '/pages/newsletter'
+  add '/pages/contact'
   add '/:id'
   add '/subcategories/:id'
   add '/listings/:id'
