@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'pages/about'
-  get 'pages/contact'
-  get 'pages/careers'
-  get 'pages/services'
-  get 'pages/terms'
-  get 'pages/newsletter'
+  get 'about', to: "pages#about"
+  get 'contact', to: "pages#contact"
+  get 'careers', to: "pages#careers"
+  get 'services', to: "pages#services"
+  get 'terms', to: "pages#terms"
+  get 'newsletter', to: "pages#newsletter "
 
   devise_for :sellers, :path => '', :path_names => { :sign_up => 'thenorthremembers' }, 
                                      controllers: {registrations: 'registrations'}
@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   
   resources :listings
 
+ # resources :listings, :path => '', except: [:new, :edit, :index]
+
+
   resources :listings do
     put :save, on: :member
   end
@@ -53,10 +56,10 @@ Rails.application.routes.draw do
   get 'thankyou', to: 'pages#thankyou'
 
 
-  resources :categories, :path => '',:path_names => { :edit => 'backtothefuture' }, except: [:destroy]
-  resources :subcategories,:path_names => { :edit => 'thebreakfastclub' }, except: [:destroy]
- 
+  resources :categories, :path =>'', :path_names => { :edit => 'backtothefuture' }, except: [:destroy] 
+  resources :subcategories, :path_names => { :edit => 'thebreakfastclub' }, except: [:destroy]
   
+  # resources :subcategories, :path => '', only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

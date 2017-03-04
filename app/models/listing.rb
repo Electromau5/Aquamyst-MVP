@@ -1,8 +1,9 @@
 class Listing < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   validates :name, presence: true, length: { maximum: 75 }
-  validates :gender, presence: true
   validates :feature1, :feature2, :feature3, length: { maximum: 150 }
   validates :feature4, :feature5, length: { maximum: 150}
   validates :price, presence: true
@@ -43,8 +44,6 @@ class Listing < ActiveRecord::Base
   belongs_to :subcategory
   belongs_to :seller
 
-  extend FriendlyId
-  friendly_id :name
 
 def self.search(search)
   if search
@@ -55,4 +54,5 @@ def self.search(search)
     find(:all)
   end 
 end
+
 end

@@ -1,11 +1,11 @@
 class Category < ActiveRecord::Base
 
-	has_many :subcategories
-	has_many :listings
-
 extend FriendlyId
+friendly_id :name
 
-  	friendly_id :name
+has_many :subcategories
+has_many :listings
+
 
 def self.search(search)
   if search

@@ -82,7 +82,7 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
        params.require(:listing).permit(:name, :feature1, :feature2, :feature3, :feature4, :feature5, 
                                        :price, :cod, :time, :description, :image, 
                                        :image2, :image3, :image4, :image5, :site, :category_id, 
-                                       :subcategory_id, :gender, :tag, :keywords)
+                                       :subcategory_id, :gender, :tag, :keywords, :permalink)
     end
 
     def set_listing
