@@ -33,7 +33,7 @@ end
 
 def show
 	@subcategory = Subcategory.friendly.find(params[:id])
-	@subcategory_listings = @subcategory.listings.order("created_at DESC")
+	@subcategory_listings = @subcategory.listings.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
 		set_meta_tags title: "#{@subcategory.title}",
                   	  keywords: "#{@subcategory.keywords}",
                       description: "#{@subcategory.description}"
