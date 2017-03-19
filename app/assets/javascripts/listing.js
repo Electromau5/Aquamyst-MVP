@@ -15,10 +15,11 @@ $(document).ready(function() {
 $(function() {
   return $('.zoom').elevateZoom({
     gallery: 'gallery',
-    zoomType: "inner",
+    zoomType: 'lens',
+    lesSize: 200,
     responsive: true,
     borderSize: 1,
-    cursor: 'crosshair',
+    cursor: 'cursor',
     galleryActiveClass: 'active',
     imageCrossfade: true
   });
