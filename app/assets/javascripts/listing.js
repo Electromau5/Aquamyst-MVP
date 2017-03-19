@@ -15,7 +15,7 @@ $(document).ready(function() {
 $(function() {
   return $('.zoom').elevateZoom({
     gallery: 'gallery',
-    zoomType: 'lens',
+    zoomType: 'inner',
     lesSize: 200,
     responsive: true,
     borderSize: 1,
