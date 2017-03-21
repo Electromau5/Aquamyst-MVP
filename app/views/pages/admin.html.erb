@@ -58,6 +58,7 @@
 <table class="table table-striped table-bordered">
   <tr>
     <th class="center">Name / Meta-Title</th>
+    <th class="center">Category</th>
     <th class="center">Meta Description</th>
     <th class="center">Meta Keywords</th>
   </tr>
@@ -68,6 +69,7 @@
     <% Listing.all.each do |p| %>
       <tr>
         <td><%= p.name %></td>
+        <td><%= p.category.name %></td>
         <td><%= p.description %></td>
         <td><%= p.tag %></td>
      </tr>
