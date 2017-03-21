@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+before_action :require_admin, only: [:admin]
+
 	def thankyou
 
 	end
@@ -28,4 +30,15 @@ class PagesController < ApplicationController
 
 	end
 
+	def admin
+
+	end
+
+private
+
+ def require_admin
+      if !current_seller.admin
+        redirect_to root_path 
+      end
+  end
 end

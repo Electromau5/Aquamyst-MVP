@@ -1,0 +1,102 @@
+<nav class="navbar navbar-default">
+    <h1 style="text-align:center">ADMIN PANEL</h1>
+  </nav>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-color:#fff; border: 1px solid #000">
+  
+    <h2>Meta tags</h2>
+      <h3 style="text-align:center">Categories</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th class="center">Name</th>
+            <th class="center">Meta Title</th>
+            <th class="center">Meta Description</th>
+            <th class="center">Meta Keywords</th>
+          </tr>
+        <thead>
+        
+        </thead>
+          <tbody>
+            <% Category.all.each do |c| %>
+              <tr>
+                <td><%= c.name %></td>
+                <td><%= c.title %></td>
+                <td><%= c.description %></td>
+                <td><%= c.keywords %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <br>
+
+
+<h3 style="text-align:center">Sub-Categories</h3>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Name</th>
+    <th class="center">Meta Title</th>
+    <th class="center">Meta Description</th>
+    <th class="center">Meta Keywords</th>
+  </tr>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% Subcategory.all.each do |sub| %>
+      <tr>
+        <td><%= sub.name %></td>
+        <td><%= sub.title %></td>
+        <td><%= sub.description %></td>
+        <td><%= sub.keywords %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h3 style="text-align:center">Product Database</h3>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Name / Meta-Title</th>
+    <th class="center">Meta Description</th>
+    <th class="center">Meta Keywords</th>
+  </tr>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% Listing.all.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.description %></td>
+        <td><%= p.tag %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+    <h3 style="text-align:center">Current Sellers</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th class="center">Name / Meta Title</th>
+            <th class="center">Meta Description</th>
+            <th class="center">Meta Keywords</th>
+          </tr>
+        <thead>
+        
+        </thead>
+          <tbody>
+            <% Seller.all.each do |s| %>
+              <tr>
+                <td><%= s.name %></td>
+                <td><%= s.description %></td>
+                <td><%= s.keywords %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <br>
+
+
+
+

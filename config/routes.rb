@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'careers', to: "pages#careers"
   get 'services', to: "pages#services"
   get 'terms', to: "pages#terms"
-  get 'newsletter', to: "pages#newsletter "
+  get 'newsletter', to: "pages#newsletter"
+  get 'admin', to: "pages#admin" 
 
   devise_for :sellers, :path => '', :path_names => { :sign_up => 'thenorthremembers' }, 
                                      controllers: {registrations: 'registrations'}
