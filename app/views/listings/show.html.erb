@@ -72,10 +72,11 @@
 										</span><br /><br />
 										<div class= "cod">COD <%= @listing.cod %></div><br />
 										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
-									<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", 
-																				   :onclick => "fbq('track', 'Purchase');",
-																				    class: "btn btn-primary" %>
-
+										<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", 
+													:onclick => "onClick()",
+													class: 'btn btn-primary'
+												%>
+	
 									<br /><br />
 					   </div>	
 					   			   	
@@ -127,7 +128,6 @@
 			 	</div>
 		<% end %>
 </div>
-
 		
 
 		
