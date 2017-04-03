@@ -73,9 +73,7 @@
 										<div class= "cod">COD <%= @listing.cod %></div><br />
 										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
 									<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", 
-																				   :onclick => "trackOutboundLink
-																				   ('http://www.wheresmytee.com'); 
-																				   return false;",
+																				   :onclick => "fbq('track', 'Purchase');",
 																				    class: "btn btn-primary" %>
 
 									<br /><br />
