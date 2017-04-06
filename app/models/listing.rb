@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class Listing < ActiveRecord::Base
 
   extend FriendlyId
@@ -17,7 +19,11 @@ class Listing < ActiveRecord::Base
   has_attached_file :image, styles: { medium: ["300x300>", :jpg, :quality => 70], thumb: 
                     ["100x100>", :jpg, :quality => 70],  large:  
                     ['1000>', :jpg, :quality => 70] }
-  
+
+  def image_from_url(url)
+    self.image = open(url)
+  end
+ 
   has_attached_file :image2, styles: { medium: ["300x300>", :jpg, :quality => 70], thumb: 
                     ["100x100>", :jpg, :quality => 70],  large:  
                     ['1000>', :jpg, :quality => 70] }
@@ -54,5 +60,4 @@ def self.search(search)
     find(:all)
   end 
 end
-
 end

@@ -56,8 +56,9 @@
 						<%= l.label :feature5, 'Feature5 (Maximum 150 characters)' %>
 						<%= l.text_field :feature5, class: "form-control" %>
 						
-						<%= l.label :image %>
-						<%= l.file_field :image, class: "form-control"%><br />
+						<div class="field">
+	  						Provide a URL for Your Image: <%= text_field_tag 'image_url' %>
+  						</div>
 
 						<%= l.label :image2 %>
 						<%= l.file_field :image2, class: "form-control"%><br />
