@@ -15,13 +15,7 @@ class Listing < ActiveRecord::Base
 
   has_and_belongs_to_many :users
 
-
-    has_attached_file :avatar, :styles => {:medium => "300x300>"}
-
-    def avatar_from_url(url)
-      self.avatar = open(url)
-    end
-
+    
   has_attached_file :image, styles: { medium: ["300x300>", :jpg, :quality => 70], thumb: 
                     ["100x100>", :jpg, :quality => 70],  large:  
                     ['1000>', :jpg, :quality => 70] }
