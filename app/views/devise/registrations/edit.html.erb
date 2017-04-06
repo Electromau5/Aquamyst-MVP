@@ -1,41 +1,49 @@
-<div class="container">
-<h1>Edit your Account</h1>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
-
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: "form-control"%>
-  </div>
- 
- <% if resource == current_user %>
-    <div class="form-group">
-      <%= f.label :description, 'Describe yourself (Maximum 140 characters)' %>
-      <%= f.text_area :description, class: 'form-control' %>
-    </div>
+<% if resource == @user %>
+<div class="container-welcome-text">
+  <h2 class="welcome-text-user">Who are You?</h1>
+  <h4 class="sign-up-subheader">Let the World know</h4>
+</div>
+<% elsif resource == @seller %>
+  <h2 class="welcome-text-user">Welcome</h1>
+  <h4 class="sign-up-subheader">Sign up for a seller account</h4>
 <% end %>
+<body class="signup-bg">
+  <div class="container-signup" style="margin-top: -2.5%">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+      
+    <div class="form-group">
+      <%= f.label :name, 'Username' %>
+      <%= f.text_field :name, placeholder: 'Username...', class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :avatar, 'Profile Pic' %>
+      <%= f.file_field :avatar, class: "form-control"%>
+    </div>
+
+     <% if resource == current_user %>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: 'Describe your brilliance.....', class: 'form-control' %>
+    </div>
+ <% end %>
   
   <div class="form-group">
     <%= f.label :location %>
-    <%= f.text_field :location, class: 'form-control' %>
+    <%= f.text_field :location, placeholder: 'Where are you from Bro....',  class: 'form-control' %>
   </div>
   
  <% if resource == current_seller %>
 
   <div class="form-group">
-    <%= f.label :description, 'Business description' %>
-    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: 'Describe your brand....', class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -57,13 +65,15 @@
     <%= f.label :social4, 'Pinterest link' %>
     <%= f.text_field :social4, class: 'form-control' %><br />
   </div>
-  
+
   <% end %><br />
 
-  <%= f.submit "Edit Account", class: 'btn btn-primary' %><br />
+  <div class="submit" style="display:flex">
+    <%= f.submit "I'm Done!", class: 'btn-edit btn-edit-primary' %>
+    <%= link_to "Cancel", root_path, class: 'btn-edit btn-edit-primary' %></div><br />
+  </div>
+  
+  <% end %><br />
+  </div>
+</body>
 
-<% end %>
-
-  <%= link_to 'Cancel', root_path %><br /><br />
-
-</div>

@@ -52,7 +52,12 @@
 .seller-header
 {
 	font-weight: bold;
-	font-family: "Raleway-ExtraLight", sans-serif;
+	font-family: "Raleway-Medium", sans-serif;
+}
+
+.seller-header:hover
+{
+	background-color: #3B5998;
 }
 
 .seller-name

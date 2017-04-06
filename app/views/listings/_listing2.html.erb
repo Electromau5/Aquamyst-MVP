@@ -1,0 +1,20 @@
+  <div class = "container-fluid">
+    <div class = "row" id="grid">
+      <% obj.each do |listing| %>
+          <div class = "col-xs-6 col-md-3" id="listing-box">
+            <div class = "thumbnail"style="padding:6px">
+                  <%= link_to image_tag(listing.image.url(:medium)), listing %>
+                </div>
+                  <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+                    <div class = "listing_name">
+                  <%= truncate(listing.name, length: 100) %>
+              </div>
+              <div class="seller-listing">
+                by<br />
+                  <small><%= link_to listing.seller.name,listing.seller if listing.seller%></smaill>
+              </div>
+            </div>
+        </div>
+      <% end %>
+  </div>
+  </div>

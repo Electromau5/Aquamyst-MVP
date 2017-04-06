@@ -12,7 +12,7 @@ Rails.application.routes.draw do
                                      controllers: {registrations: 'registrations'}
  
  
-  devise_for :users, :path_names => { :sign_up => 'theforceiswithme' }, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :sellers, only: [:show]
 
