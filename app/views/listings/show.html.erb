@@ -21,8 +21,7 @@
 	<% end %>	
 		<div class = "row">
 			<div class = "col-md-6">
-					<%= image_tag @listing.image.url %>
-					
+
 					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %> <br /><br /><br />
 						<div class ="row">
 
