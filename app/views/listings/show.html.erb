@@ -2,137 +2,93 @@
 <head>
 	<script>
 		function onClick() {
-  				fbq('track', 'Purchase', {currency: 'INR'});
+  				fbq('track');
 							};
 	</script>
 </head>
 <div itemscope itemtype="http://schema.org/Product">
-<div class = "container">
-	<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
-<%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
-	<% if user_signed_in? %>
-		<% if @listing.users.include?(current_user) %>
-			<div class="save-remove"><%= link_to 'Unsave this Tee', remove_listing_path(@listing), method: :put %></div>
+	<div class = "container">
+		<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
+			<%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
+			<% if user_signed_in? %>
+				<% if @listing.users.include?(current_user) %>
+					<div class="save-remove"><%= link_to 'Unsave this Tee', remove_listing_path(@listing), method: :put %></div>
 				<% else %>
-			<div class="save-remove"><%= link_to 'Save this Tee', save_listing_path(@listing), method: :put %></div>	
-		<% end %><br /><br />
-	<% elsif !seller_signed_in? && !user_signed_in? %>
-		<div class="save-remove"><%= link_to 'Save this Tee', new_user_registration_path %></div>
-	<% end %>	
-		<div class = "row">
-			<div class = "col-md-6">
+					<div class="save-remove"><%= link_to 'Save this Tee', save_listing_path(@listing), method: :put %></div>	
+				<% end %><br /><br />
+							<% elsif current_seller == @listing.seller %>
+										<div class="edit-delete" style="float:right; margin-top: -45px"><%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
+										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
+									</div>
+			<% elsif !seller_signed_in? && !user_signed_in? %>
+				<div class="save-remove"><%= link_to 'Save this Tee', new_user_registration_path %></div>
+			<% end %>	
+			<div class = "row">
+				<div class = "col-md-6">
 					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %> <br /><br /><br />
-						<div class ="row">
-
-							<div class = "col-md-12 col-xs-12">
-								<div id="gallery">
-								
-								 <%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image.url(:large) }, :class => 'zoom2' %>
-								
-								 <% if @listing.image2.present? %>
-								 <%= link_to image_tag(@listing.image2.url(:thumb)), '#', data: { image: @listing.image2.url(:medium), zoom_image: @listing.image2.url(:large) }, :class => 'zoom2' %>
-								 <% else %>
-								 <%= image_tag('white.png', size: "10x10") %>
-								 <% end %>
-
-								<% if @listing.image3.present? %>
-								 <%= link_to image_tag(@listing.image3.url(:thumb)), '#', data: { image: @listing.image3.url(:medium), zoom_image: @listing.image3.url(:large) }, :class => 'zoom2' %>
-								 <% else %>
-								 <%= image_tag('white.png', size: "16x10") %>
-								 <% end %>
-
-								 <% if @listing.image4.present? %>
-								 <%= link_to image_tag(@listing.image4.url(:thumb)), '#', data: { image: @listing.image4.url(:medium), zoom_image: @listing.image4.url(:large) }, :class => 'zoom2' %>
-								 <% else %>
-								 <%= image_tag('white.png', size: "16x10") %>
-								 <% end %>
-								</div>
+					<div class ="row">
+						<div class = "col-md-12 col-xs-12">
+							<div id="gallery">
+								<%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image.url(:large) }, :class => 'zoom2' %>
 							</div>
-						</div>		
+						</div>
+					</div>		
 				</div>		
 					<div class = "col-md-6">
 						<div class = "listing_set_1">
 							<div class="title">
 									Product Name: <br/>
 							</div>
-								<div class="fill">
-									<span itemprop="name">
-										<%= @listing.name %>
-									</span>		
-								</div>
-									<div class="by"style="font-weight:bold">by</div>
-										
+							<div class="fill">
+								<span itemprop="name">
+									<%= @listing.name %>
+								</span>		
+							</div>
+							<div class="by"style="font-weight:bold">by</div>
 						</div>
 						<div class="seller-name-on-product">
-							<span itemprop="manufacturer"><%= link_to @listing.seller.name, @listing.seller %></span>
-						</div><br />
-								<div class="title">
-									Key Features: <br/>
-								</div>
-									<div class="f"><%= @listing.feature1 %></div>
-									<div class="f"><%= @listing.feature2 %></div>
-									<div class="f"><%= @listing.feature3 %></div>
-									<div class="f"><%= @listing.feature4 %></div>
-									<div class="f"><%= @listing.feature5 %></div><br />
-										<span style="font-size:25px;border:1px solid #008ac1;padding:6px">
-										<span itemprop="priceCurrency" content="INR"> ₹ </span> 
-										<span itemprop="price"><%= @listing.price %></span>
-										</span><br /><br />
-										<div class= "cod">COD <%= @listing.cod %></div><br />
-										<div class="time">Delivery Time: <%= @listing.time %></div><br /><br />
-										<%= link_to 'Buy It Here', "#{@listing.site}", :target => "_blank", 
-													:onclick => "onClick()",
-													class: 'btn btn-primary'
-												%>
-	
-									<br /><br />
-					   </div>	
-					   			   	
-						<div class= "col-md-12 col-xs-12">
-							<h4 style="font-family: 'Slot-Regular', sans-serif; font-size: 30px; font-weight: bold">Product Description:</h4>
-								<div class="des" style="font-family:'Lato-Medium', sans-serif'"> 
-									
-										<%= @listing.description %>
-									</span><br /><br />
-								<%= link_to 'More from this seller', @listing_seller, class: "btn btn-danger" %><br /><br />
-								</div>
-								<div class = "col-md-4">
-									<% if current_seller == @listing.seller %>
-										<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
-										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
-									<% end %>
-								</div><br />
+							<span itemprop="manufacturer"><%= link_to @listing.seller.name, @listing.seller if @listing.seller%><%= image_tag('click-me.png') %></span>
 						</div>
+						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div>
+						<% if @listing.description? %>
+							<h4 style="font-family: 'Slot-Regular', sans-serif; font-size: 30px; font-weight: bold">Description:</h4>
+						<% end %>
+							<div class="des" style="font-family:'Lato-Medium', sans-serif'"> 
+								<%= @listing.description %><br><br><br>
+								<%= link_to 'More Info', "#{@listing.site}", :target => "_blank", 
+													:onclick => "onClick()",
+													class: 'btn-buy-it-now' %>
+							</div><br > 
+					  </div>	
+			</div>
+		</div>
 	</div>
-</div>
-</div>
 <nav class="navbar navbar-default" style="background-color:#000">
 	<div class="container-fluid">
-    <div class="navbar-header">
-      <div class ="navbar-brand">
-          <div class="seperator">
-          	<h4 style="margin-top:4px; font-family: 'signify', sans-serif; color: #fff">similar products</h4>
-          </div>
-      </div>
-    </div>
-  </div>
+    	<div class="navbar-header">
+      		<div class ="navbar-brand">
+          		<div class="seperator">
+          			<h4 style="margin-top:4px; font-family: 'signify', sans-serif; color: #fff">similar products</h4>
+          		</div>
+      		</div>
+    	</div>
+ 	 </div>
 </nav>
-     <div class = "container-fluid">
-    <div class = "row" id="grid">
-			<% Listing.all.where(:tag => @listing.tag).each do |listing| %>
-		  		<div class = "col-xs-6 col-md-3" id="listing-box">
-		    		<div class = "thumbnail"style="padding:6px">
-             			<%= link_to image_tag(listing.image.url(:medium)), listing %>
-             		</div>
-             			<div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
-             				<div class = "listing_name">
-			   					<%= truncate(listing.name, length: 100) %>
-			 				</div>
-			 				<div class="seller-listing">
+<div class = "container-fluid">
+	<div class = "row" id="grid">
+		<% Listing.all.where(:tag => @listing.tag).each do |listing| %>
+			<div class = "col-xs-6 col-md-3" id="listing-box">
+		    	<div class = "thumbnail"style="padding:6px">
+             		<%= link_to image_tag(listing.image.url(:medium)), listing %>
+             	</div>
+             	<div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+             		<div class = "listing_name">
+			   			<%= truncate(listing.name, length: 100) %>
+			 		</div>
+			 		<div class="seller-listing">
 			 					by<br />
-			 						<small><%= link_to listing.seller.name,listing.seller if listing.seller %></smaill>
-			 				</div>
-			 			</div>
+			 			<small><%= link_to listing.seller.name,listing.seller if listing.seller %></smaill>
+			 		</div>
 			 	</div>
 		<% end %>
 </div>

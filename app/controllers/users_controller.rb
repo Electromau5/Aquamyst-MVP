@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @user_listings = @user.listings
+    @user_listings = @user.listings.order("updated_at DESC")
   end
 
   def show_follow

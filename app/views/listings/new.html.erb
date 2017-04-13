@@ -1,89 +1,44 @@
 <div class = "container">
-	<h1 style="text-align:center">ADD A NEW T-SHIRT</h1>
-		<p style='text-align:center'>All fields are not mandatory, but we strongly recommend adding as much detail as possible to make your t-shirt stand out for users.</p>
-		<div class='jumbotron'>
-			<%= render 'shared/errors', obj: @listing %>
-				<%= form_for @listing do |l| %>
-					<div class = "row">
-						<div class = "col-md-6 col-xs-12">
+	<h1 style="text-align:center">Awwwww YEAH!!!!</h1>
+		<p style='text-align:center'>Add a new Tee Bro!</p>
+			<div class='jumbotron'>
+				<%= render 'shared/errors', obj: @listing %>
+					<%= form_for @listing do |l| %>
+						<div class = "row">
+							<div class = "col-md-6 col-xs-12">
 
-						<%= l.label :name, 'Name (Maximum 75 Characters)' %><br />
-						<%= l.text_field :name, placeholder: 'Use simple terms...', class: "form-control" %><br />
+								<%= l.label :name, 'Name (Maximum 75 Characters)' %><br />
+								<%= l.text_field :name, placeholder: 'Keep it simple...', class: "form-control" %><br />
 
-						<%= l.label :category %><br />
-  						<%= l.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %><br /><br />
+								<%= l.label :category %><br />
+		  						<%= l.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %><br /><br />
 
-						<%= l.label :subcategory %><br />
-						<%= l.collection_select :subcategory_id, Subcategory.order(:name),:id,:name, include_blank: true %><br /><br />
+								<%= l.label :subcategory %><br />
+								<%= l.collection_select :subcategory_id, Subcategory.order(:name),:id,:name, include_blank: true %><br /><br />
 
-  						<%= l.label :tag, 'Keywords (please use a space after each word)' %>
-						<%= l.text_field :tag, placeholder: 'game of thrones tyrion drogon.....', class: "form-control" %><br/>
+		  						<%= l.label :tag, 'Keywords' %>
+								<%= l.text_field :tag, placeholder: 'game of thrones tyrion drogon.....', class: "form-control" %><br/>
 						
-						<%= l.label :price %><br />
-						<%= l.text_field :price, class: "form-control" %><br />
-						
-						<%= l.label :cod, 'Cash on Delivery' %>
-						<%= l.radio_button :cod, 'available' %> 
-  						
-  						<%= label :cod_available, 'Available' %>
-  						<%= l.radio_button :cod, 'not available' %> 
-  						
-  						<%= label :cod_not_available, 'Not Available' %>
-  						<%= l.radio_button :cod, 'contact seller' %> 
-  						<%= label :cod_contact, 'Contact Seller' %><br /><br />
-						
-						<%= l.label :time, 'Delivery Time' %><br />
-						<%= l.text_field :time, class: "form-control" %><br />
-						
-						<%= l.label :site, 'Link to tee' %><br />
-						<%= l.text_field :site, placeholder: 'where can you buy it....', class: "form-control" %><br />
-						
-						<%= l.label :description, 'Detailed Description (Maximum 500 characters)' %>
-						<%= l.text_area :description, placeholder: 'This will make your tee stand out on search engines. Create a unique and effective description.....', class: "form-control" %><br />
+  							</div>		
+  							<div class = "col-md-6 col-xs-12">
 
-  						</div>		
-  						<div class = "col-md-6 col-xs-12">
-						<%= l.label :feature1, 'Feature1 (Maximum 150 characters)' %>
-						<%= l.text_field :feature1, placeholder: 'What makes this product special....', class: "form-control" %>
-						
-						<%= l.label :feature2, 'Feature2 (Maximum 150 characters)'%>
-						<%= l.text_field :feature2, class: "form-control" %>
-						
-						<%= l.label :feature3, 'Feature3 (Maximum 150 characters)' %>
-						<%= l.text_field :feature3, class: "form-control" %>
-						
-						<%= l.label :feature4, 'Feature4 (Maximum 150 characters)' %>
-						<%= l.text_field :feature4, class: "form-control" %>
-						
-						<%= l.label :feature5, 'Feature5 (Maximum 150 characters)' %>
-						<%= l.text_field :feature5, class: "form-control" %>
-						
-						<h5>Upload an image file url</h5>
-						
-						<%= l.label :image %>
-						<%= l.text_field 'image_url', class: "form-control"%><br />
+								<%= l.label :site, 'Link to tee' %><br />
+								<%= l.text_field :site, placeholder: 'where can you buy it....', class: "form-control" %><br />
+								
+								<%= l.label :description, 'Description' %>
+								<%= l.text_area :description, placeholder: 'Keep it simple.....', class: "form-control" %><br />
 
-						<h5>OR</h5>
-
-						<h5>Upload an image directly</h5>
-						
-  						<%= l.label :image %>
-						<%= l.file_field :image, class: "form-control"%><br />
-						
-						<%= l.label :image2 %>
-						<%= l.file_field :image2, class: "form-control"%><br />
-						
-  						<%= l.label :image3 %>
-						<%= l.file_field :image3, class: "form-control"%><br />
-					
-						<%= l.label :image4 %>
-						<%= l.file_field :image4, class: "form-control"%><br />
-
-						<%= l.submit 'CREATE', class: 'btn btn-default btn-lg'  %>
-						<%= link_to 'CANCEL', seller_path(current_seller), class: 'btn btn-default btn-lg' %><br />
-					</div>
-			</div><br />
-		</div>
-						
+								<%= l.label :image %>
+								<%= l.file_field :image, class: "form-control"%><br />
+								
+								<%= l.submit 'CREATE', class: 'btn btn-default btn-lg'  %>
+									<% if user_signed_in? %>
+										<%= link_to 'CANCEL', user_path(current_user), class: 'btn btn-default btn-lg' %><br />
+									<% elsif seller_signed_in? %>
+										<%= link_to 'CANCEL', seller_path(current_seller), class: 'btn btn-default btn-lg' %><br />
+									<% end %>
+							</div>
+						</div><br />
 					<% end %>
+			</div>
 </div><br />

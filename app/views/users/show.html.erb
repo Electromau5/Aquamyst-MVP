@@ -17,6 +17,9 @@
           </div>
         </div>
     </div><br />
+    <% if current_user == @user %>
+      <%= link_to 'Add a new product', new_listing_path, class: "btn btn-default" %><br /><br />
+    <% end %>
 </div>
 </div>
 <div id="user-header">

@@ -1,3 +1,41 @@
+.btn-buy-it-now
+{
+	
+    margin-top: -23px;
+    font-family: 'Raleway-Medium', sans-serif;
+    color: #fff;
+    border-color: #2e6da4;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 13px 40px 13px 40px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #337ab7;; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(left top, blue, #337ab7); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, blue, #337ab7); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, blue, #337ab7); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, blue, #337ab7); /* Standard syntax */
+}
+
+.btn-buy-it-now:hover
+{
+	color: #fff;
+}
+
+
 .caption
 {
 	background-color: #000;
@@ -25,6 +63,17 @@
 {
 	width: 100%;
 	margin: 0 auto;
+}
+
+.know-more
+{
+	margin-top: 5px;
+	font-size: 15px;
+}
+
+.know-more > a
+{		
+	//color: #000;
 }
 
 #listing-box
@@ -79,18 +128,18 @@
 .save-remove
 {
 	float: right;
-	border: 1px solid #40DDF5;
-	padding: 10px;
-	width: 200px;
+	padding: 6px;
+	width: 150px;
 	border-radius: 5px;
-	background-color: #fff;
+	background-color:  #3B5998;
 	text-align: center;
 	margin-top: -50px;
+	border: 1px solid #1D45D6;
 }
 
 .save-remove > a
 {
-	color: #D9534F;
+	color: #fff;
 	font-family:'Runaway', sans-serif;
 	font-weight: bold;
 	font-size: 20px;
@@ -99,15 +148,8 @@
 .save-remove > a:hover
 {
 	text-decoration: none;
-	background-color: #40DDF5;
-	color: #fff;
 }
 
-.save-remove:hover
-{
-	background-color: #40DDF5;
-	color: #fff
-}
 
 .search-1
 {
@@ -122,6 +164,7 @@
 	//margin-top: 10px;
 	padding: 20px;
 	margin-left: 10%;
+	margin-top: -40px;
 }
 
 .seller-name-on-product
@@ -132,7 +175,7 @@
 
 .seller-name-on-product > a
 {
-	color: #337ab7;
+	color: #3B5998;
 }
 
 small > a
@@ -143,7 +186,6 @@ small > a
 	font-size: 25px!important;
 	
 }
-
 
 a:hover
 {
@@ -160,6 +202,19 @@ a:hover
 	font-family: 'Slot-Regular', sans-serif;
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.user-listing-count
+{
+	text-align: center;
+	display: inline;
+	font-weight: bold;
+	color: #7D0000;
+}
+
+.user-listing-count > p
+{
+	border: 1px solid #7D0000;
 }
 
 .zoom2 > img

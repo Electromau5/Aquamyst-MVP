@@ -1,62 +1,61 @@
 <div itemscope itempro="organization" itemtype="http://schema.org/Organization">
-<div class="container-fluid">
-	<div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
-		<div class="row">
-			<div class="col-md-3">
-				<%= image_tag(@seller.avatar(:medium), class: 'img-circle') if @seller.avatar? %>
-			</div>
+	<div class="container-fluid">
+		<div class="jumbotron" style="border:1px solid grey;border-radius: 3px;background-color:#fff">
+			<div class="row">
+				<div class="col-md-3">
+					<%= image_tag(@seller.avatar(:medium), class: 'img-circle') if @seller.avatar? %>
+				</div>
 				<div class="col-md-6">
 					<div class="seller-name">
 						<span itemprop="brand">
 							<h1><%= @seller.name %></h1>
 						</span>
 					</div>
-						<div class="seller-description">
-							<span itemprop="description">
-								<p><%= @seller.description %></p>
-							</span>
+					<div class="seller-description">
+						<span itemprop="description">
+							<p><%= @seller.description %></p>
+						</span>
+					</div>
+					<div class="seller-location">
+						<span itemprop="location">
+							<p><%= @seller.location %></p>
+						</span>
+					</div>
+					<div class="f-u">
+						<% if user_signed_in? %>
+							<% if @seller.users.include?(current_user) %>
+								<div class="follow-unfollow"><%= link_to 'Unfollow', unfollow_seller_path(@seller), method: :put %>
+								</div>
+							<% else %>
+								<div class="follow-unfollow"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %>
+								</div>	
+							<% end %>
+						<% elsif !seller_signed_in? && !user_signed_in? %>
+							<div class="follow-unfollow"><%= link_to 'Follow', new_user_registration_path %></div>
+						<% end %>
+					</div><br />	
+					<% if @seller.users.count == 1 %>
+						<div class="user-count">
+							<%= @seller.users.count %>
+								<p>Follower</p>
 						</div>
-							<div class="seller-location">
-									<span itemprop="location">
-										<p><%= @seller.location %></p>
-									</span>		
-								</span>
-							</div>
-							<div class="f-u">
-							<% if user_signed_in? %>
-								<% if @seller.users.include?(current_user) %>
-									<div class="follow-unfollow"><%= link_to 'Unfollow', unfollow_seller_path(@seller), method: :put %>
-									</div>
-								<% else %>
-									<div class="follow-unfollow"><%= link_to 'Follow', follow_seller_path(@seller), method: :put %>
-									</div>	
-								<% end %>
-							<% elsif !seller_signed_in? && !user_signed_in? %>
-								<div class="follow-unfollow"><%= link_to 'Follow', new_user_registration_path %></div>
-							<% end %>
-							</div><br />	
-							<% if @seller.users.count == 1 %>
-								<div class="user-count">
-									<%= @seller.users.count %>
-										<p>Follower</p>
-								</div>
-							<% elsif @seller.users.count > 1 || @seller.users.count < 1 %>							
-								<div class="user-count">
-									<%= @seller.users.count %>				
-										<p>Followers</p>
-								</div>
-							<% end %>
+					<% elsif @seller.users.count > 1 || @seller.users.count < 1 %>							
+						<div class="user-count">
+							<%= @seller.users.count %>				
+							<p>Followers</p>
+						</div>
+					<% end %>
 				</div>
-		</div><br />
+			</div><br />
 			<div class="icons">
 				<%= link_to image_tag('pinterest.png'), @seller.social4, :target => "_blank"   if @seller.social4? %>
 				<%= link_to image_tag('instagram.png'), @seller.social3, :target => "_blank"   if @seller.social3? %>
 				<%= link_to image_tag('twitter.png'), @seller.social2, :target => "_blank"  if @seller.social2? %>
 				<%= link_to image_tag('facebook.png'), @seller.social1, :target => "_blank" if @seller.social1%>
-				</div>
+			</div>
+		</div>
 	</div>
-</div>
-<h2  class="product-list-header">KEY PRODUCTS</h2>
+	<h2  class="product-list-header">KEY PRODUCTS</h2>
 	<% if current_seller == @seller && @seller_listings.count < 10 %>
 		<%= link_to 'Add a new product', new_listing_path, class: "btn btn-default" %><br /><br />
 	<% end %>
