@@ -157,7 +157,11 @@ html, body
  .navbar-brand
   {
   	margin-top: -10px;
-    margin-left: -10px;
+    margin-left: -40px;
+  }
+  .navbar-brand > a
+  {
+    margin-left: -40px;
   }
 .navbar-collapse.in {
     overflow-y: visible;
