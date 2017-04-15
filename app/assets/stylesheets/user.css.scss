@@ -1,3 +1,17 @@
+.form-inline span {
+  display:block;
+}
+
+.form-inline span:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.form-inline .col-lg-12 {
+  clear:both;
+}
+
 .dropdown
 {
     margin-right: 55px;

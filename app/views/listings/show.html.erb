@@ -63,17 +63,10 @@
 			</div>
 		</div>
 	</div>
-<nav class="navbar navbar-default" style="background-color:#000">
-	<div class="container-fluid">
-    	<div class="navbar-header">
-      		<div class ="navbar-brand">
-          		<div class="seperator">
-          			<h4 style="margin-top:4px; font-family: 'signify', sans-serif; color: #fff">similar products</h4>
+          		<div>
+          			<h4 class="seperator">similar products</h4>
           		</div>
-      		</div>
-    	</div>
- 	 </div>
-</nav>
+      		
 <div class = "container-fluid">
 	<div class = "row" id="grid">
 		<% Listing.all.where(:tag => @listing.tag).each do |listing| %>
