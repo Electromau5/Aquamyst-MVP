@@ -125,16 +125,37 @@
 	margin-top: -65px;
 }
 
+.saves
+{
+	background-color: #3B5998;
+	opacity: 0.6;
+	right: 1;
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	z-index: 1;
+	border-radius: 2px;
+}
+
+.save-count
+{
+	font-weight: bold;
+	text-align: center;
+	margin-top: 14px;
+	color: #fff;
+	font-family: "Raleway-Light", sans-serif;
+}
+
 .save-remove
 {
 	float: right;
-	padding: 6px;
+	padding: 2px 2px 2px 2px;
 	width: 150px;
-	border-radius: 5px;
-	background-color:  #3B5998;
+	background-color:  #5CB85C;
 	text-align: center;
 	margin-top: -50px;
-	border: 1px solid #1D45D6;
+	opacity: 0.9;
+	width: 100px;
 }
 
 .save-remove > a

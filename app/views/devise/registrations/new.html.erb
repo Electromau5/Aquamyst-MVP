@@ -1,52 +1,45 @@
 <% if resource == @user %>
-<div class="container-welcome-text">
-  <h2 class="welcome-text-user">Welcome, Amigo!</h1>
-  <h4 class="sign-up-subheader">Sign up for the platform</h4>
-</div>
+  <div class="container-welcome-text">
+    <h2 class="welcome-text-user">Welcome, Amigo!</h1>
+    <h4 class="sign-up-subheader">Sign up for the platform</h4>
+  </div>
 <% elsif resource == @seller %>
   <h2 class="welcome-text-user">Welcome</h1>
   <h4 class="sign-up-subheader">Sign up for a seller account</h4>
 <% end %>
-<body class="signup-bg">
-  <div class="container-signup">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <body class="signup-bg">
+    <div class="container-signup">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
       <div class="col-xs-12 col-sm-12">
-    
-      <div class="form-group">
-        <%= f.text_field :name, placeholder: 'Username...', class: 'form-control' %>
+        <div class="form-group">
+          <%= f.text_field :name, placeholder: 'Username...', class: 'form-control' %>
+        </div>
       </div>
-
-    </div>
-    <div class="col-xs-12 col-sm-12">
-    
-      
-      <div class="form-group">
-        <%= f.email_field :email, placeholder: 'Email...', class: 'form-control' %>
-      </div>
-    </div>
-
       <div class="col-xs-12 col-sm-12">
-    
-
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password...', class: 'form-control' %>
-        <% if @validatable %>
-          <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
-        <% end %>
+        <div class="form-group">
+          <%= f.email_field :email, placeholder: 'Email...', class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-12">
-    
-
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password...', class: 'form-control' %>
+      <div class="col-xs-12 col-sm-12">
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", placeholder: 'Password...', class: 'form-control' %>
+          <% if @validatable %>
+            <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
+          <% end %>
+        </div>
       </div>
-
-    </div>
-
-    <%= f.submit "Let's do this!", class: 'btn-signup btn-signup-primary' %>
+      <div class="col-xs-12 col-sm-12">
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password...', class: 'form-control' %>
+        </div>
+      </div>
+      <%= f.submit "Let's do this!", class: 'btn-signup btn-signup-primary' %>
       <% end %><br />
+    </div>
+  </body><br>
+  <div style="text-align:center">
+    <%= render "devise/shared/links" %>
   </div>
-</body>
+
 

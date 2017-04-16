@@ -12,9 +12,9 @@
 			<%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />
 			<% if user_signed_in? %>
 				<% if @listing.users.include?(current_user) %>
-					<div class="save-remove"><%= link_to 'Unsave this Tee', remove_listing_path(@listing), method: :put %></div>
+					<div class="save-remove"><%= link_to 'Unsave', remove_listing_path(@listing), method: :put %></div>
 				<% else %>
-					<div class="save-remove"><%= link_to 'Save this Tee', save_listing_path(@listing), method: :put %></div>	
+					<div class="save-remove"><%= link_to 'Save', save_listing_path(@listing), method: :put %></div>	
 				<% end %><br /><br />
 							<% elsif current_seller == @listing.seller %>
 										<div class="edit-delete" style="float:right; margin-top: -45px"><%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
