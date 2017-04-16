@@ -149,14 +149,12 @@
 
 .save-remove
 {
-	float: right;
-	padding: 2px 2px 2px 2px;
-	width: 150px;
-	background-color:  #5CB85C;
+	background-color:  #7D0000;
 	text-align: center;
-	margin-top: -50px;
-	opacity: 0.9;
-	width: 100px;
+	width: 180px;
+	padding: 13px 40px 13px 40px;
+	border-radius: 4px;
+	vertical-align: middle;
 }
 
 .save-remove > a
@@ -164,7 +162,8 @@
 	color: #fff;
 	font-family:'Runaway', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 14px;
+	text-align: center;
 }
 
 .save-remove > a:hover
