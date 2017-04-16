@@ -12,7 +12,7 @@
         </div>
     </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav col-xs-8 col-md-8" style="margin-left: 40px">
+        <ul class="nav navbar-nav col-xs-8 col-md-8" style="margin-left: 10px">
           <% Category.all.each do |category| %>
             <li><%= link_to "#{category.name}", category_path(category) %></li>
           <% end %>
