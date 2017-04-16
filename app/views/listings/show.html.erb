@@ -3,7 +3,7 @@
 	<script>
 		function onClick() {
   				fbq('track');
-							};
+							}
 	</script>
 </head>
 <div itemscope itemtype="http://schema.org/Product">
@@ -55,7 +55,7 @@
 						<% end %>
 							<div class="des" style="font-family:'Lato-Medium', sans-serif'"> 
 								<%= @listing.description %><br><br><br>
-								<%= link_to 'More Info', "#{@listing.site}", :target => "_blank", 
+								<%= link_to 'Buy it Now', "#{@listing.site}", :target => "_blank", 
 													:onclick => "onClick()",
 													class: 'btn-buy-it-now' %>
 							</div><br > 

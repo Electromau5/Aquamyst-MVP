@@ -154,15 +154,7 @@ html, body
    background-repeat: no-repeat;
    background-size: cover;
 }
- .navbar-brand
-  {
-  	margin-top: -10px;
-    margin-left: -40px;
-  }
-  .navbar-brand > img
-  {
-    margin-left: -40px;
-  }
+
 .navbar-collapse.in {
     overflow-y: visible;
 }
@@ -178,6 +170,34 @@ html, body
 {
 	color: #fff;
 	text-decoration: none;
+}
+
+.navbar-toggle
+{     
+    padding: 9px!important;
+    background-color: #000!important;
+    border: 1px solid #000!important;
+    border-color: #000!important;
+    margin-right: 5px!important;
+}
+
+.navbar-home-toggle:hover, .navbar-home-toggle:focus
+{
+
+}
+
+.navbar-logo{
+    float: left;
+    //padding: 15px -6px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 43px;
+    padding-top: 0px;
+}
+
+.navbar-logo > a{
+    padding-top: 0px;
+    margin-left: -5px;
 }
 
 .navbar-toggle
