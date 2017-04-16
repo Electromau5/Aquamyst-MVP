@@ -21,7 +21,7 @@
 										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
 									</div>
 			<% elsif !seller_signed_in? && !user_signed_in? %>
-				<div class="save-remove"><%= link_to 'Save this Tee', new_user_registration_path %></div>
+				<div class="save-remove"><%= link_to 'Save', new_user_registration_path %></div>
 			<% end %>	
 			<div class = "row">
 				<div class = "col-md-6">
