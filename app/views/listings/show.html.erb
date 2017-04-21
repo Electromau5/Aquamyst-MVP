@@ -55,7 +55,7 @@
 										</div>
 									<% elsif !seller_signed_in? && !user_signed_in? %>
 										<div class="save-remove"><%= link_to 'Save', new_user_registration_path %></div>
-									<% end %>
+									<% end %><br><br>
 								<%= link_to 'More Info', "#{@listing.site}", :target => "_blank", 
 													:onclick => "onClick()",
 													class: 'btn-buy-it-now' %>
