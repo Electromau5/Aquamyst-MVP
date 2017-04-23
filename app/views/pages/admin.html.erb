@@ -66,12 +66,13 @@
   </thead>
 
   <tbody>
-    <% Listing.all.each do |p| %>
+    <% Listing.all.each do |l| %>
       <tr>
-        <td><%= p.name %></td>
-        <td><%= p.category.name %></td>
-        <td><%= p.description %></td>
-        <td><%= p.tag %></td>
+        <td><%= l.id %></td>
+        <td><%= l.name %></td>
+        <td><%= l.category.name %></td>
+        <td><%= l.description %></td>
+        <td><%= l.tag %></td>
      </tr>
     <% end %>
   </tbody>
