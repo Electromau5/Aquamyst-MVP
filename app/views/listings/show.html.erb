@@ -24,7 +24,7 @@
 					<div class = "col-md-6">
 						<div class = "listing_set_1">
 							<div class="title">
-									Product Name: <br/>
+									Name: <br/>
 							</div>
 							<div class="fill">
 								<span itemprop="name">
@@ -36,12 +36,14 @@
 						<div class="seller-name-on-product">
 							<span itemprop="manufacturer"><%= link_to @listing.seller.name, @listing.seller if @listing.seller%></span>
 						</div>
-						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div>
+						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div><br>
 						<% if @listing.description? %>
-							<h4 style="font-family: 'Slot-Regular', sans-serif; font-size: 30px; font-weight: bold">Description:</h4>
+							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
 						<% end %>
-							<div class="des" style="font-family:'Lato-Medium', sans-serif'"> 
+							<div class="des" style="font-family:'Lato-Light', sans-serif'"> 
 								<%= @listing.description %><br><br>
+							</div>
+							<div class="save-buy" style="display:flex">
 									<% if user_signed_in? %>
 										<% if @listing.users.include?(current_user) %>
 											<div class="save-remove"><%= link_to 'Unsave', remove_listing_path(@listing), method: :put %></div>

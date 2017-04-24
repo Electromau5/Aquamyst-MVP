@@ -7,10 +7,10 @@
                  canonical: "www.wheresmytee.com",
                  next: "http://www.wheresmytee.com/?page=2" %>
 <div class="jumbo" style="height: 175px; margin-top: -21px">
-     <h1 style="text-align:center; color: #fff; font-family: 'Raleway-Medium', sans-serif">We are a T-Shirt Search platform</h1><br>
+     <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
         <%= form_tag(listings_path, :method => "get") do %>
           <div class="search-form">
-            <%= text_field_tag :search, params[:search], placeholder: "Start searching for a tee or browse our vast selection.......", class: "form-control search-1" %>
+            <%= text_field_tag :search, params[:search], placeholder: "Start your search.......", class: "form-control search-1" %>
             <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
           </div>
         <% end %>
@@ -45,7 +45,7 @@
               <span itemprop="manufacturer">
                 <small>
                   <%= link_to listing.seller.name,listing.seller if listing.seller%>
-                </small><br />
+                </small><br>
               </span>
             </div>
           </div>
