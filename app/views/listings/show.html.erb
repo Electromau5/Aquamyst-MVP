@@ -6,6 +6,13 @@
 							}
 	</script>
 </head>
+<div class="jumbo" style="height: 200px; margin-top: -21px">
+     <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
+      <div class="main-navigation">
+        <%= link_to 'Collections', categories_path, class: "btn-landing" %>
+        <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
+      </div>
+</div><br>
 <div itemscope itemtype="http://schema.org/Product">
 	<div class = "container">
 		<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
@@ -96,7 +103,11 @@
 			 		<div class="seller-listing">
 			 					by<br />
 			 			<small><%= link_to listing.seller.name,listing.seller if listing.seller %></smaill>
-			 		</div>
+			 		</div><br>
+			 		<div class="homepage-listing-engagement">
+                		<%= link_to 'Buy It', listing.site, target: '_blank',:onclick => "onClick()", class: "btn-homepage" %>
+                		<%= link_to 'Details', listing, class: "btn-homepage" %>
+              		</div><br>
 			 	</div>
 			 </div>
 		<% end %>

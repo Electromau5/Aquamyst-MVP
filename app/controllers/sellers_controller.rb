@@ -4,6 +4,10 @@ before_action :authenticate_user!, only: [:follow, :unfollow]
 
 #before_filter :authenticate_seller!
 
+  def index
+    @sellers = Seller.all 
+  end
+
   def show
     @seller = Seller.friendly.find(params[:id])
     @seller_listings = @seller.listings.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)

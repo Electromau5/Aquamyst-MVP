@@ -13,9 +13,6 @@
 								<%= l.label :category %><br />
 		  						<%= l.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %><br /><br />
 
-								<%= l.label :subcategory %><br />
-								<%= l.collection_select :subcategory_id, Subcategory.order(:name),:id,:name, include_blank: true %><br /><br />
-
 		  						<%= l.label :tag, 'Keywords' %>
 								<%= l.text_field :tag, placeholder: 'game of thrones tyrion drogon.....', class: "form-control" %><br/>
 						

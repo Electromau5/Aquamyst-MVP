@@ -56,7 +56,40 @@ html, body
     text-align: left;
  }
 
- 
+ .btn-landing
+ {
+    padding: 16px 16px 16px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #3B5998;
+    border-color: #3B5998;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    user-select: none;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Raleway-Light', sans-serif;
+ }
+
+ a:hover
+ {
+    text-decoration: none;
+    color: #fff;
+ }
+
+ .main-navigation
+ {
+    text-align: center;
+ }
+
 .company-details > .col-md-3 > h4
 {
 	color: #fff;
@@ -87,9 +120,10 @@ html, body
     padding: 11px;
     color: #fff;
 }
+
 .dropdown {
     float: right;
-    margin-right: 15px;
+    margin-right: 0px!important;
 }
 
 .explore
@@ -134,7 +168,7 @@ html, body
 
 .jumbo
 {
-    background: url("banner-2.jpg");
+    background: url("Timeline-1.png");
     margin-top: -5px;
     width: 100%;
     background-size: cover;
@@ -211,9 +245,8 @@ html, body
 #search-form
 {
 	float:left;
-	margin-top: 8px;
-	margin-left: -1px;
-    margin-top: -40px;
+	margin-top: 5px;
+	margin-left: 1%;
 }
 
 .push

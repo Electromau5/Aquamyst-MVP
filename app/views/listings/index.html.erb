@@ -1,3 +1,10 @@
+<head>
+  <script>
+    function onClick() {
+          fbq('track');
+              }
+  </script>
+</head>
 <div itemscope itemtype="http://schema.org/WebSite">
   <meta itemprop="url" content="http://www.wheresmytee.com/"/>
 </div>
@@ -6,14 +13,12 @@
                  keywords: 'T-Shirts, India, Men, Graphic Tees',
                  canonical: "www.wheresmytee.com",
                  next: "http://www.wheresmytee.com/?page=2" %>
-<div class="jumbo" style="height: 175px; margin-top: -21px">
+<div class="jumbo" style="height: 200px; margin-top: -21px">
      <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
-        <%= form_tag(listings_path, :method => "get") do %>
-          <div class="search-form">
-            <%= text_field_tag :search, params[:search], placeholder: "Start your search.......", class: "form-control search-1" %>
-            <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
-          </div>
-        <% end %>
+      <div class="main-navigation">
+        <%= link_to 'Collections', categories_path, class: "btn-landing" %>
+        <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
+      </div>
 </div>
 <div class = "container-fluid">
   <h2  class="product-list-header">NEW PRODUCTS</h2>
@@ -47,7 +52,11 @@
                   <%= link_to listing.seller.name,listing.seller if listing.seller%>
                 </small><br>
               </span>
-            </div>
+            </div><br>
+              <div class="homepage-listing-engagement">
+                <%= link_to 'Buy It', listing.site, target: '_blank',:onclick => "onClick()", class: "btn-homepage" %>
+                <%= link_to 'Details', listing, class: "btn-homepage" %>
+              </div><br>
           </div>
         </div>
       <% end %>

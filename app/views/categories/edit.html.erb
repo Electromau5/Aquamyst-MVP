@@ -18,7 +18,10 @@
 						<%= c.label :keywords %><br />
 						<%= c.text_field :keywords, class: "form-control" %><br />
 
-						<%= c.submit 'Update', class: 'btn btn-primary btn-lg'  %>
+						<%= c.label :image_c, 'Image' %>
+						<%= c.file_field :image_c, class: "form-control"%><br><br>
+						
+						<%= c.submit 'Update', class: 'btn btn-primary'  %>
 						<%= link_to 'Cancel', category_path %>
 					<% end %>
 				</div>

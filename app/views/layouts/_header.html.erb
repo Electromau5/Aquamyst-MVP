@@ -13,16 +13,16 @@
     </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav col-xs-8 col-md-8" style="margin-left: 10px">
-          <% Category.all.each do |category| %>
-            <li><%= link_to "#{category.name}", category_path(category) %></li>
+            <%= form_tag(listings_path, :method => "get") do %>
+              <div class="search-form">
+                <%= text_field_tag :search, params[:search], placeholder: "Start your search.......", class: "form-control search-1" %>
+                <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
+              </div>
           <% end %>
-            <% if seller_signed_in? && current_seller.admin? %>
-              <li><%= link_to 'Applicants', rainsofcastamere_path %></li>
-            <% end %>
         </ul>
         <% if seller_signed_in? %>
           <div class="dropdown"style="margin-top:8px">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Account
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="margin-top: 5px">Account
                 <span class="caret"></span>
             </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -33,7 +33,7 @@
           </div>
         <% elsif user_signed_in? %>
             <div class="dropdown"style="margin-top:8px">
-              <button class="btn account-btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Account
+              <button class="btn account-btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  style="margin-top: 5px">Account
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">

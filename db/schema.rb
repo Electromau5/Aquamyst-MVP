@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304014811) do
+ActiveRecord::Schema.define(version: 20170424204653) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
@@ -25,10 +25,14 @@ ActiveRecord::Schema.define(version: 20170304014811) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text   "description"
-    t.string "keywords"
+    t.string   "name"
+    t.string   "title"
+    t.text     "description"
+    t.string   "keywords"
+    t.string   "image_c_file_name"
+    t.string   "image_c_content_type"
+    t.integer  "image_c_file_size"
+    t.datetime "image_c_updated_at"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

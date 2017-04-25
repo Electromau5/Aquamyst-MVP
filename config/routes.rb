@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'newsletter', to: "pages#newsletter"
   get 'admin', to: "pages#admin" 
 
-  devise_for :sellers, :path => '', :path_names => { :sign_up => 'thenorthremembers' }, 
+  devise_for :sellers, :path_names => { :sign_up => 'thenorthremembers' }, 
                                      controllers: {registrations: 'registrations'}
  
  
@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   get 'thankyou', to: 'pages#thankyou'
 
 
-  resources :categories, :path =>'', :path_names => { :edit => 'backtothefuture' }, except: [:destroy] 
+  resources :categories, :path_names => { :edit => 'backtothefuture', :index => 'collections' }, except: [:destroy] 
   resources :subcategories, :path_names => { :edit => 'thebreakfastclub' }, except: [:destroy]
   
   # resources :subcategories, :path => '', only: [:show]

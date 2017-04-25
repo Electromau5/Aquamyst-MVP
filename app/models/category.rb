@@ -6,6 +6,11 @@ friendly_id :name
 has_many :subcategories
 has_many :listings
 
+has_attached_file :image_c, styles: { box_1: ["400x400>", :jpg, :quality => 70], 
+                     box_2: ["450x450>", :jpg, :quality => 70], box_3: 
+                    ["600x600>", :jpg, :quality => 70] }
+
+validates_attachment_content_type :image_c, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 def self.search(search)
   if search

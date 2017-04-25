@@ -23,7 +23,11 @@
               <div class="seller-listing">
                 by<br />
                   <small><%= link_to listing.seller.name,listing.seller if listing.seller%></smaill>
-              </div>
+              </div><br>
+                <div class="homepage-listing-engagement">
+                  <%= link_to 'Buy It', listing.site, target: '_blank',:onclick => "onClick()", class: "btn-homepage" %>
+                  <%= link_to 'Details', listing, class: "btn-homepage" %>
+              </div><br>
             </div>
         </div>
       <% end %>

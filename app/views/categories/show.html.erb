@@ -1,13 +1,9 @@
-<div class="category-jumbo" style="height: 82px; margin-top: -20px">
-            <%= form_tag(category_path, :method => "get") do %>
-                <div class="search-form" style='margin-top: -10px; margin-left: -1%; width: 100%!important'>
-                    <%= text_field_tag :search, params[:search], placeholder: "Start searching for your tee....", class: "form-control  search-1" %>
-                    <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
-                </div>
-            <% end %>
+<div class="jumbo" style="height: 200px; margin-top: -21px">
+     <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
+      <div class="main-navigation">
+        <%= link_to 'Collections', categories_path, class: "btn-landing" %>
+        <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
+      </div>
 </div>
-<% if @category_subcategories.present? %>
-	<%= render 'subcategories/sub', obj: @category_subcategories %>
-<% end %>
-	<h2  class="product-list-header">NEW PRODUCTS</h2>
+<h2  class="product-list-header"><%= @category.name %> tees</h2>
 <%= render 'listings/listing', obj: @category_listings %>
