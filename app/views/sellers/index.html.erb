@@ -8,7 +8,7 @@
 <div class = "container">
   <h2  class="product-list-header">FEATURED BRANDS</h2><br>
     <div class = "c-row" id="c-grid">
-      <% @sellers.each do |s| %>
+      <% @sellers.where(:admin => false).each do |s| %>
         <div class = "col-xs-6 col-md-3" id="category-box">
           <div class = "image_c"style="padding:6px">
             <%= link_to image_tag(s.avatar.url(:medium) ), s %>
