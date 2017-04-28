@@ -28,7 +28,7 @@ gem 'friendly_id', '~> 5.2'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'whenever', :require => false
-
+gem 'social-share-button'
 
 group :development, :test do
   gem 'byebug'

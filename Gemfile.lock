@@ -214,6 +214,8 @@ GEM
       rdoc (~> 4.0)
     sitemap_generator (5.3.0)
       builder (~> 3.0)
+    social-share-button (0.10.0)
+      coffee-rails
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -274,6 +276,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sitemap_generator
+  social-share-button
   spring
   sqlite3
   therubyracer

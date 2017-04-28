@@ -1,3 +1,13 @@
+$size: 30px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size!important;
+    height: $size!important;
+    width: $size!important;
+  }
+}
+
 .social-icons
 {
 	//float: right;
