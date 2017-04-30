@@ -15,7 +15,12 @@
                 <% end %>
               <% end %>
               <%= link_to image_tag(listing.image.url(:medium)), listing %>
+                <div style="float:right">
+                  <% if listing.users.include?(current_user) %>
+                  <div class = "save-heart-icon"><%= link_to image_tag('heart-r.png'), remove_listing_path(listing), method: :put %></div>
+                  <% end %>
                 </div>
+              </div>
                   <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
                     <div class = "listing_name">
                   <%= truncate(listing.name, length: 100) %>
