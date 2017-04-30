@@ -82,7 +82,7 @@
       		
 <div class = "container-fluid">
 	<div class = "row" id="grid">
-		<% Listing.all.where(:subcategory => @listing.subcategory).each do |listing| %>
+		<% Listing.all.where(:category => @listing.category).each do |listing| %>
 			<div class = "col-xs-6 col-md-3" id="listing-box">
 		    	<div class = "thumbnail"style="padding:6px">
 		    		<% if listing.users && listing.users.count > 0 %>
