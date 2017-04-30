@@ -16,7 +16,7 @@
 <div itemscope itemtype="http://schema.org/Product">
 	<div class = "container">
 		<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
-			<%= link_to 'Back', listings_path, class: "btn btn-default" %><br /><br />	
+			<%= link_to 'Back', categories_path, class: "btn btn-default" %><br /><br />	
 			<div class = "row">
 				<div class = "col-md-6">
 					<%= image_tag @listing.image.url(:medium), :data => { zoom_image: @listing.image.url(:large) }, :class => "zoom" %> <br /><br /><br />
@@ -45,7 +45,7 @@
 						</div>
 						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div><br>
 							<div class="social-share">
-							<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), :url => listing_path, 'data-twitter-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
+							<%= social_share_button_tag(@listing.name, 'data-twitter-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
 							</div>
 						<% if @listing.description? %>
 							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
@@ -54,21 +54,20 @@
 								<%= @listing.description %><br><br>
 							</div>
 							<div class="save-buy" style="display:flex">
-									<% if user_signed_in? %>
-										<% if @listing.users.include?(current_user) %>
-											<div class="save-remove"><%= link_to 'Unsave', remove_listing_path(@listing), method: :put %></div>
-										<% else %>
-											<div class="save-remove"><%= link_to 'Save', save_listing_path(@listing), method: :put %></div>
-
-										<% end %><br /><br />
-									<% elsif current_seller == @listing.seller %>
-										<div class="edit-delete" style="float:right; margin-top: -45px"><%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
-											<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
-										</div>
-									<% elsif !seller_signed_in? && !user_signed_in? %>
-										<div class="save-remove"><%= link_to 'Save', new_user_registration_path %></div>
-									<% end %><br><br>
-								<%= link_to 'More Info', "#{@listing.site}", :target => "_blank", 
+								<% if user_signed_in? %>
+									<% if @listing.users.include?(current_user) %>
+										<div class="save-remove"><%= link_to 'Unsave', remove_listing_path(@listing), method: :put %></div>
+									<% else %>
+										<div class="save-remove"><%= link_to 'Save', save_listing_path(@listing), method: :put %></div>
+									<% end %><br /><br />
+								<% elsif current_seller == @listing.seller %>
+									<div class="edit-delete" style="float:right; margin-top: -45px"><%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
+										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
+									</div>
+								<% elsif !seller_signed_in? && !user_signed_in? %>
+									<div class="save-remove"><%= link_to 'Save', new_user_registration_path %></div>
+								<% end %><br><br>
+										<%= link_to 'More Info', "#{@listing.site}", :target => "_blank", 
 													:onclick => "onClick()",
 													class: 'btn-buy-it-now' %>
 							</div><br> 
