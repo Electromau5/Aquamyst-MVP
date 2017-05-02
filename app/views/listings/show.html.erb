@@ -7,6 +7,7 @@
 	</script>
 	<% content_for :head do %>
   		<meta property="og:image" content= "<%= @listing.image.url(:medium) %>" />
+  		<meta name="twitter:image" content= "<%= @listing.image.url(:medium) %>" />
 	<% end %>
 </head>
 <body>
@@ -49,7 +50,7 @@
 						</div>
 						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div><br>
 							<div class="social-share">
-							<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), 'data-twitter-title' => "#wheresmytee Get your #{@listing.name} tee from Where's My Tee?", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
+							<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), 'data-twitter-title' => "#wheresmytee #{@listing.name} ", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
 							</div>
 						<% if @listing.description? %>
 							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
