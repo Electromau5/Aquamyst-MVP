@@ -7,9 +7,6 @@ class ApplicationController < ActionController::Base
 
   def show
     set_meta_tags title: "We are a T-Shirt search engine"
-    set_meta_tags :og => {
-                      :image => @listing.image.url(:medium)
-                      }
   end
 
   
