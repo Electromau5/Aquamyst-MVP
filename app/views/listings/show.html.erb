@@ -5,9 +5,7 @@
   				fbq('track');
 							}
 	</script>
-	set_meta_tags :og {
-				:image => '<%= @listing.image.url(:medium) %>'
-			}
+	<meta property="og:image" content= "<%= @listing.image.url(:medium) %>" />
 </head>
 <body>
 <div class="jumbo" style="height: 200px; margin-top: -21px">
