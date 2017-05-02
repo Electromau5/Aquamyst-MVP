@@ -5,6 +5,9 @@
   				fbq('track');
 							}
 	</script>
+
+<meta property="og:image" content="<%= @listing.image.url(:medium) %>" />
+
 </head>
 <div class="jumbo" style="height: 200px; margin-top: -21px">
      <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
@@ -45,7 +48,7 @@
 						</div>
 						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div><br>
 							<div class="social-share">
-							<%= social_share_button_tag(@listing.name, 'data-twitter-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
+							<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), 'data-twitter-title' => "#wheresmytee Get your #{@listing.name} tee from Where's My Tee?", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
 							</div>
 						<% if @listing.description? %>
 							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
