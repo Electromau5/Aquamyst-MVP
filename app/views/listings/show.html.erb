@@ -7,14 +7,14 @@
 	</script>
 	<% content_for :head do %>
   		<meta property="og:image" content= "<%= @listing.image.url(:medium) %>" />
+		<meta property="og:description" content= "<%= @listing.description %>" />
   		<meta property="og:title" content= "<%= @listing.name %>" />
   		<meta name="twitter:card" content= "summary" />
-  		<meta name="twitter:image" content= "<%= @listing.image.url(:medium) %>"  />
 	<% end %>
 </head>
 <body>
 <div class="jumbo" style="height: 200px; margin-top: -21px">
-     <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
+	<h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif">We are a T-Shirt search platform</h1><br>
       <div class="main-navigation">
         <%= link_to 'Collections', categories_path, class: "btn-landing" %>
         <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
@@ -52,11 +52,11 @@
 						</div>
 						<div class="know-more"><%= link_to '(Know more about this brand)', @listing.seller %></div><br>
 							<div class="social-share">
-							<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), 'data-twitter-title' => "#wheresmytee #{@listing.name} ", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
+								<%= social_share_button_tag(@listing.name, :image => @listing.image.url(:medium), 'data-twitter-title' => "#wheresmytee #{@listing.name} ", 'data-facebook-title' => "Get your #{@listing.name} tee from Where's My Tee?", 'data-pinterest-title' => "Get your #{@listing.name} tee from Where's My Tee?") %>
 							</div>
-						<% if @listing.description? %>
-							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
-						<% end %>
+							<% if @listing.description? %>
+								<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
+							<% end %>
 							<div class="des" style="font-family:'Lato-Light', sans-serif'"> 
 								<%= @listing.description %><br><br>
 							</div>
