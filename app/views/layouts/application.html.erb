@@ -8,7 +8,7 @@
 <%= csrf_meta_tags %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="p:domain_verify" content="f28842e2e65b0b88b2d9a3a711cb2f8f"/>
-<%=display_meta_tags%>
+<%= content_for?(:head) ? yield(:head) : '' %>
 <!-- Facebook Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
