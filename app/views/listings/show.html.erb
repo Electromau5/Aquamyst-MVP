@@ -7,9 +7,9 @@
 	</script>
 	<% content_for :head do %>
   		<meta property="og:image" content= "<%= @listing.image.url(:medium) %>" />
-  		<meta property="og:description" content= "<%= @listing.description %>" />
   		<meta property="og:title" content= "<%= @listing.name %>" />
-  		<meta property="twitter:card" content= "summary" />
+  		<meta name="twitter:card" content= "summary" />
+  		<meta name="twitter:image" content= "<%= @listing.image.url(:medium) %>"  />
 	<% end %>
 </head>
 <body>
