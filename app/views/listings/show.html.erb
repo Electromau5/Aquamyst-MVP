@@ -6,7 +6,7 @@
 							}
 	</script>
 	<% content_for :head do %>
-  		<meta property="og:image"  content="@listing.image.url(:medium)" /> 
+  		<meta property="og:image" content= "<%= @listing.image.url(:medium) %>" />
 	<% end %>
 </head>
 <body>
