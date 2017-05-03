@@ -10,7 +10,6 @@
         <div class ="navbar-logo">
           <%= link_to image_tag('Logo-3.png'),listings_path %>
         </div>
-
     </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav col-xs-8 col-md-8" style="margin-left: 10px">
@@ -19,7 +18,7 @@
                 <%= text_field_tag :search, params[:search], placeholder: "Start your search.......", class: "form-control search-1" %>
                 <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-search" %>
               </div>
-           <% end %>
+            <% end %>
         </ul>
         <% if seller_signed_in? %>
           <div class="dropdown"style="margin-top:8px">
@@ -44,6 +43,7 @@
               </ul>
             </div>
         <% else %>
+
                 <div class="login"><%= link_to 'Login', new_user_session_path %></div>
                 <div class="login"><%= link_to 'Sign Up', new_user_registration_path %></div>
       <% end %>
