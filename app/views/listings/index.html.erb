@@ -8,6 +8,7 @@
 <div itemscope itemtype="http://schema.org/WebSite">
   <meta itemprop="url" content="http://www.wheresmytee.com/"/>
 </div>
+<div itemscope itemtype="http://schema.org/Product">
 <% set_meta_tags title: 'We are a t-shirt search platform based in India',
                  description: 'We are an online curator of graphic t-shirts for men from a multitude of innovative brands in India. Our vast database makes online shopping extremely fast and simple.',
                  keywords: 'T-Shirts, India, Men, Graphic Tees',
@@ -76,5 +77,6 @@
 </div>
 <div class="center" style="text-align:center">
   <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+</div>
 </div>
  

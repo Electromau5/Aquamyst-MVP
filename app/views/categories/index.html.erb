@@ -1,3 +1,4 @@
+<div itemprop="product" itemscope itemtype="http://schema.org/Product">
 <div class="jumbo" style="height: 250px; margin-top: -21px">
     <iframe style="margin-top:10px; margin-left: 10px" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fwheresmyteeapp%2F&width=141&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="141" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
      <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif; margin-top: 5px">We are a T-Shirt search platform</h1><br>
@@ -12,12 +13,13 @@
       <% @categories.each do |c| %>
         <div class = "col-xs-6 col-md-3" id="category-box">
           <div class = "image_c"style="padding:6px">
-            <%= link_to image_tag(c.image_c.url(:box_3) ), c %>
+            <span itemprop="image"><%= link_to image_tag(c.image_c.url(:box_3) ), c %></span>
             <div class="overlay">
             </div>
-            <span class="text"><span><%= link_to c.name, c %></span></span>
+              <span class="text"><span itemprop="name"><%= link_to c.name, c %></span></span>
           </div>
         </div>
       <% end %>
     </div>
+</div>
 </div>

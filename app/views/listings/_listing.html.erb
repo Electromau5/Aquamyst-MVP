@@ -1,3 +1,4 @@
+<div itemprop="product" itemscope itemtype="http://schema.org/Product">
   <div class = "container-fluid">
     <div class = "row" id="grid">
       <% obj.each do |listing| %>
@@ -14,7 +15,7 @@
                   </div>
                 <% end %>
               <% end %>
-              <%= link_to image_tag(listing.image.url(:medium)), listing %>
+              <span itemprop="image"><%= link_to image_tag(listing.image.url(:medium)), listing %></span>
               <% if user_signed_in? %>
                 <div style="float:right">
                   <% if listing.users.include?(current_user) %>
@@ -29,7 +30,7 @@
                 </div>
                   <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
                     <div class = "listing_name">
-                  <%= truncate(listing.name, length: 100) %>
+                  <span itemprop="name"><%= truncate(listing.name, length: 100) %></span>
               </div>
               <div class="seller-listing">
                 by<br />
@@ -47,3 +48,4 @@
    <div class="center" style="text-align:center">
       <%= will_paginate obj, renderer: BootstrapPagination::Rails %>
   </div>
+</div>

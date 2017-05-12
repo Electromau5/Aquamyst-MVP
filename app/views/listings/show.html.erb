@@ -21,7 +21,7 @@
         <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
       </div>
 </div><br>
-<div itemscope itemtype="http://schema.org/Product">
+<div itemprop="product" itemscope itemtype="http://schema.org/Product">
 	<div class = "container">
 		<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
 			<%= link_to 'Back', categories_path, class: "btn btn-default" %><br /><br />	
@@ -59,7 +59,7 @@
 								<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
 							<% end %>
 							<div class="des" style="font-family:'Lato-Light', sans-serif'"> 
-								<%= @listing.description %><br><br>
+								<span itemprop="description"><%= @listing.description %></span><br><br>
 							</div>
 							<div class="save-buy" style="display:flex">
 								<% if user_signed_in? %>
@@ -112,7 +112,7 @@
 			 		</div>
 			 		<div class="seller-listing">
 			 					by<br />
-			 			<small><%= link_to listing.seller.name,listing.seller if listing.seller %></smaill>
+			 			<small><span itemprop="manufacturer"><%= link_to listing.seller.name,listing.seller if listing.seller %></span></smaill>
 			 		</div><br>
 			 		<div class="homepage-listing-engagement">
                 		<%= link_to 'Buy It', listing.site, target: '_blank',:onclick => "onClick()", class: "btn-homepage" %>

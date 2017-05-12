@@ -1,25 +1,27 @@
-<div class="jumbo" style="height: 250px; margin-top: -21px">
+<div itemscope itempro="organization" itemtype="http://schema.org/Organization">
+  <div class="jumbo" style="height: 250px; margin-top: -21px">
     <iframe style="margin-top:10px; margin-left: 10px" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fwheresmyteeapp%2F&width=141&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId" width="141" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
      <h1 style="text-align:center; color: #fff; font-family: 'Lato-Medium', sans-serif; margin-top: 5px">We are a T-Shirt search platform</h1><br>
       <div class="main-navigation">
         <%= link_to 'Collections', categories_path, class: "btn-landing" %>
         <%= link_to 'Brands', sellers_path, class: "btn-landing" %>
       </div>
-</div>
-<div class = "container">
-  <h2  class="product-list-header">FEATURED BRANDS</h2><br>
-    <div class = "c-row" id="c-grid">
-      <% @sellers.where(:admin => false).each do |s| %>
-        <% if s.listings.count > 0 %>
-          <div class = "col-xs-6 col-md-3" id="category-box">
-            <div class = "image_c"style="padding:6px">
-              <%= link_to image_tag(s.avatar.url(:medium) ), s %>
-                <div class="overlay">
-                </div>
-                <span class="text"><span><%= link_to s.name, s %></span></span>
+  </div>
+  <div class = "container">
+    <h2  class="product-list-header">FEATURED BRANDS</h2><br>
+      <div class = "c-row" id="c-grid">
+        <% @sellers.where(:admin => false).each do |s| %>
+          <% if s.listings.count > 0 %>
+            <div class = "col-xs-6 col-md-3" id="category-box">
+              <div class = "image_c"style="padding:6px">
+                <span itemprop="image"><%= link_to image_tag(s.avatar.url(:medium) ), s %></span>
+                  <div class="overlay">
+                  </div>
+                  <span class="text"><span itemprop="name"><%= link_to s.name, s %></span></span>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+  </div>
 </div>
