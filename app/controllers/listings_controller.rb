@@ -49,7 +49,8 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
       @listing_seller = @listing.seller
       set_meta_tags title: "#{@listing.name}",
                     keywords: "#{@listing.tag}",
-                    description: "#{@listing.description}"
+                    description: "#{@listing.description}",
+                    image_src: "#{@listing.image.url(:medium)}"
     end
 
     def destroy

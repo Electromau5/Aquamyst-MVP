@@ -13,7 +13,8 @@ before_action :authenticate_user!, only: [:follow, :unfollow]
     @seller_listings = @seller.listings.order("updated_at DESC").paginate(:page => params[:page], :per_page => 16)
     set_meta_tags title: "#{@seller.name}",
                   keywords: "#{@seller.keywords}",
-                  description: "#{@seller.description}"
+                  description: "#{@seller.description}",
+                  image_src: "#{@seller.avatar.url(:medium)}"
   end
 
   def follow

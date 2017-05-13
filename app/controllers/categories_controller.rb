@@ -42,7 +42,8 @@ def show
     end
 	set_meta_tags title: "#{@category.title}",
                   keywords: "#{@category.keywords}",
-                  description: "#{@category.description}"
+                  description: "#{@category.description}",
+                  image_src: "#{@category.image_c.url(:box_3)}"
 end
 
 private
