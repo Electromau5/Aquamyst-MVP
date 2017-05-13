@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow: /
 
-Sitemap: http://www.wheresmytee.com/sitemap3.xml.gz
+Sitemap: http://www.wheresmytee.com/sitemap4.xml.gz
