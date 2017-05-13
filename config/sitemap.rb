@@ -10,6 +10,8 @@ SitemapGenerator::Sitemap.ping_search_engines
 #Uses aws-sdk to upload to Amazon S3 storage.
 SitemapGenerator::AwsSdkAdapter
 
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+
 SitemapGenerator::Sitemap.create do
 
   add root_path, :priority => 1.0
