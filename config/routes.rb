@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   root 'listings#index'
   
-  resources :listings, only: [:show]
+  resources :listings, only: [:show, :new, :edit]
 
   resources :listings do
     put :save, on: :member
