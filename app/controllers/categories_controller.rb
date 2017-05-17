@@ -25,7 +25,7 @@ end
 def update
 	@category = Category.friendly.find(params[:id])
 	if @category.update(category_params)
-        redirect_to category_path(@category)
+        redirect_to admin_path
     else
         render 'edit'
     end

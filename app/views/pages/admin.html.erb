@@ -5,13 +5,14 @@
   <div class="jumbotron" style="background-color:#fff; border: 1px solid #000">
   
     <h2>Meta tags</h2>
-      <h3 style="text-align:center">Categories</h3>
+      <h3 style="text-align:center">COLLECTIONS</h3>
         <table class="table table-striped table-bordered">
           <tr>
             <th class="center">Name</th>
             <th class="center">Meta Title</th>
             <th class="center">Meta Description</th>
             <th class="center">Meta Keywords</th>
+            <th class="center">Admin Action</th>
           </tr>
         <thead>
         
@@ -23,44 +24,24 @@
                 <td><%= c.title %></td>
                 <td><%= c.description %></td>
                 <td><%= c.keywords %></td>
+                <td>
+                  <%= link_to "Update",edit_category_path(c) %>
+                  <%= link_to "Delete",c, method: :delete, data: {confirm: "Are you sure?"} %>
+              </td>
               </tr>
             <% end %>
           </tbody>
         </table>
     <br>
 
-
-<h3 style="text-align:center">Sub-Categories</h3>
-<table class="table table-striped table-bordered">
-  <tr>
-    <th class="center">Name</th>
-    <th class="center">Meta Title</th>
-    <th class="center">Meta Description</th>
-    <th class="center">Meta Keywords</th>
-  </tr>
-  <thead>
-  </thead>
-
-  <tbody>
-    <% Subcategory.all.each do |sub| %>
-      <tr>
-        <td><%= sub.name %></td>
-        <td><%= sub.title %></td>
-        <td><%= sub.description %></td>
-        <td><%= sub.keywords %></td>
-     </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<h3 style="text-align:center">Product Database</h3>
+<h3 style="text-align:center">TEES</h3>
 <table class="table table-striped table-bordered">
   <tr>
     <th class="center">Name / Meta-Title</th>
     <th class="center">Category</th>
     <th class="center">Meta Description</th>
     <th class="center">Meta Keywords</th>
+    <th class="center">Admin Action</th>
   </tr>
   <thead>
   </thead>
@@ -73,6 +54,10 @@
         <td><%= l.category.name %></td>
         <td><%= l.description %></td>
         <td><%= l.tag %></td>
+        <td>
+          <%= link_to "Update",edit_listing_path(l) %>
+          <%= link_to "Delete",l, method: :delete, data: {confirm: "Are you sure?"} %>
+       </td>
      </tr>
     <% end %>
   </tbody>

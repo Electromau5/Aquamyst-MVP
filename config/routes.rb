@@ -16,8 +16,6 @@ Rails.application.routes.draw do
 
   resources :sellers, only: [:show]
 
-  #get 'seller' => 'sellers#show', path: ':id'
-
   resources :sellers do
     put :follow, on: :member
   end
@@ -32,10 +30,7 @@ Rails.application.routes.draw do
 
   root 'listings#index'
   
-  resources :listings
-
- # resources :listings, :path => '', except: [:new, :edit, :index]
-
+  resources :listings, only: [:show]
 
   resources :listings do
     put :save, on: :member

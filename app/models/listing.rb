@@ -2,7 +2,15 @@ class Listing < ActiveRecord::Base
 
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [:name]
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
 
   validates :name, presence: true, length: { maximum: 75 }
   validates :image, presence: true
