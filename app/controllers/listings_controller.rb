@@ -91,7 +91,7 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
 
 
     def require_sameseller
-      if current_seller != @listing.seller || !current_seller.admin?
+      if current_seller != @listing.seller
          redirect_to root_path 
       end
     end
