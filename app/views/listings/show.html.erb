@@ -68,7 +68,7 @@
 									<% else %>
 										<div class="save-remove"><%= link_to 'Save', save_listing_path(@listing), method: :put %></div>
 									<% end %><br /><br />
-								<% elsif current_seller == @listing.seller %>
+								<% elsif current_seller == @listing.seller || current_seller.admin %>
 									<div class="edit-delete" style="float:right"><%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
 										<%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing"},class: "btn btn-success" %> 
 									</div>

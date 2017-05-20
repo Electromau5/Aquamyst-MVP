@@ -37,9 +37,12 @@
 <table class="table table-striped table-bordered">
   <tr>
     <th class="center">Id</th>
+    <th class="center">Image</th>
     <th class="center">Name / Meta-Title</th>
     <th class="center">Category</th>
     <th class="center">Meta Description</th>
+    <th class="center">Brand</th>
+    <th class="center">URL</th>
     <th class="center">Meta Keywords</th>
     <th class="center">Admin Action</th>
   </tr>
@@ -50,9 +53,12 @@
     <% Listing.all.each do |l| %>
       <tr>
         <td><%= l.id %></td>
+        <td><%= image_tag(l.image.url(:medium)) %></td>
         <td><%= l.name %></td>
         <td><%= l.category.name %></td>
         <td><%= l.description %></td>
+        <td><%= link_to l.seller.name, l.seller, class: "btn-update-delete-admin" %></td>
+        <td><%= link_to "#{l.name}",l, class: "btn-update-delete-admin" %></td>
         <td><%= l.tag %></td>
         <td>
           <%= link_to "Update",edit_listing_path(l), class: "btn-update-delete-admin" %>
