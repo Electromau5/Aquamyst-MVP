@@ -89,10 +89,9 @@ before_action :require_sameseller, only: [:edit, :update, :destroy]
         @listing = Listing.friendly.find(params[:id])
     end
 
-
     def require_sameseller
-       if current_seller != @listing.seller && !current_seller.admin 
-         redirect_to root_path 
+      if current_seller != @listing.seller && !current_seller.admin 
+        redirect_to root_path 
       end
     end
 end

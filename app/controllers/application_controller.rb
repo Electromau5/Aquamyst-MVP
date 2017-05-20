@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   def show
     set_meta_tags title: "We are a T-Shirt search engine"
   end
-
   
   protected
 
