@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+before_action :set_category, only: [:show, :edit, :update, :destroy]
+
 def index
 	@categories = Category.all
 end
@@ -19,11 +21,10 @@ def create
 end
 
 def edit
-	@category = Category.friendly.find(params[:id])
+
 end
 
 def update
-	@category = Category.friendly.find(params[:id])
 	if @category.update(category_params)
         redirect_to admin_path
     else
@@ -32,7 +33,6 @@ def update
 end
 
 def show
-	@category = Category.friendly.find(params[:id])
 	@category_subcategories = @category.subcategories
 	#@category_listings = @category.listings.order("created_at DESC")
 	if params[:search]
@@ -47,6 +47,10 @@ def show
 end
 
 private
+
+def set_category
+	@category = Category.friendly.find(params[:id])
+end
 
 def category_params
 	params.require(:category).permit(:name, :title, :description, :keywords, :image_c)
