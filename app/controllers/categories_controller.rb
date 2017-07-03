@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
 before_action :set_category, only: [:show, :edit, :update, :destroy]
+before_action :require_admin, only: [:edit, :update, :destroy]
 
 def index
 	@categories = Category.all
@@ -54,6 +55,12 @@ end
 
 def category_params
 	params.require(:category).permit(:name, :title, :description, :keywords, :image_c)
+end
+
+def require_admin
+	 if !current_seller.admin 
+        redirect_to root_path 
+     end
 end
 
 end
