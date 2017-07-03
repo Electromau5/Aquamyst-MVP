@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702151035) do
+ActiveRecord::Schema.define(version: 20170703131242) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
@@ -129,10 +129,12 @@ ActiveRecord::Schema.define(version: 20170702151035) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "keywords"
+    t.string   "slug"
   end
 
   add_index "sellers", ["email"], name: "index_sellers_on_email", unique: true
   add_index "sellers", ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
+  add_index "sellers", ["slug"], name: "index_sellers_on_slug"
 
   create_table "sellers_users", force: :cascade do |t|
     t.integer "seller_id"
