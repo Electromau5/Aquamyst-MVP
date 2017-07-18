@@ -30,10 +30,6 @@ before_action :require_admin, only: [:admin]
 
 	end
 
-	def directories
-
-    end
-
 	def admin
 		set_meta_tags noindex: true
 		set_meta_tags noindex: 'googlebot'
